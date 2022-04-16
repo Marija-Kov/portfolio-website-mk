@@ -3,6 +3,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -10,9 +11,9 @@ body {
 }
 
 header {
-  height: 400px;
+  height: 40vh;
   background: rgba(187, 149, 155, 0.548);
-  padding: 6em 0;
+  padding: 3em 0;
 }
 
 .logo {
@@ -21,34 +22,71 @@ header {
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background: gainsboro;
-  height: 200px;
+  padding: 4em;
+  height: 500px;
   background-image: url("/images/clouds.jpg");
+  background-repeat: no-repeat;
   background-position-y: bottom;
-  background-size: 100%;
+  background-position: fixed;
+  background-size: cover;
 }
 
 a {
   text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 
-.dev,
-.art {
+.dev {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background: rgba(187, 149, 155, 0.281);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: white;
   font-size: 3em;
-  margin: 40px auto;
+  transition: 0.3s ease-in-out;
 }
 
-.dev::before,
-.art::before {
-  content: " ";
-  padding: 1.4em 1.9em;
-  border: 2px solid rgba(255, 255, 255, 0.548);
-  border-radius: 100%;
+.dev::before {
+  content: "dev";
   position: relative;
-  left: 25%;
+  top: 20%;
+  left: 45%;
+}
+
+.art {
+  position: absolute;
+  top: 63%;
+  display: block;
+  cursor: pointer;
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background: rgba(140, 190, 247, 0.486);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  color: white;
+  font-size: 3em;
+  transition: 0.3s ease-in-out;
+}
+
+.art::before {
+  content: "art ";
+  position: relative;
+  top: 40%;
+  left: 45%;
 }
 
 footer {
@@ -59,25 +97,34 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   height: 200px;
+  background: #1d1d1d;
 }
 
 @media (min-width: 666px) {
   main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .dev::before,
-  .art::before {
-    left: 50%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 300px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 150px;
+  }
+}
+
+@media (min-width: 850px) {
+  .dev,
+  .art {
+    -webkit-filter: brightness(0.5);
+            filter: brightness(0.5);
   }
 }
 /*# sourceMappingURL=index.css.map */
