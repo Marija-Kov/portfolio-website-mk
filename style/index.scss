@@ -9,20 +9,24 @@ body {
     width: 100vw;
 }
 header{
-    height: 40vh;
+    height: 20vh;
     background: rgba(187, 149, 155, 0.548);
-    padding: 3em 0;
+    padding: 2em 0;
 }
 .logo {
+    width: 100px;
+    aspect-ratio: 1;
     display: block;
     margin: 0 auto;
+    fill: rgb(94, 94, 94);
+    transition: 0.3s ease-in-out;
 }
 main {
     display: flex;
     flex-direction: column;
     background: gainsboro;
     padding: 4em;
-    height: 500px;
+    height: 80vh;
     background-image: url("/images/clouds.jpg");
     background-repeat: no-repeat;
     background-position-y: bottom;
@@ -38,12 +42,13 @@ a {
 .dev {
     position: absolute;
     display: block;
+    left: 20%;
     cursor: pointer;
-    height: 150px;
-    width: 150px;
+    width: 48%;
+    aspect-ratio: 1;
     //border: 2px solid rgba(255, 255, 255, 0.548);
     border-radius: 100%;
-    background:rgba(187, 149, 155, 0.281);
+    background:rgba(226, 132, 132, 0.514);
     transition: 0.3s ease-in-out;
     //width: 100%;
     color: white;
@@ -53,18 +58,31 @@ a {
         content: "dev";
         position: relative;
         top: 20%;
-        left: 45%;
-        
+        left: 10%;  
+    }
+     &::after {
+            z-index: 9;
+            content: "";
+            position: absolute;
+            top: 3.2em;
+            left: 2em;
+            transform: rotateZ(30deg);
+            border-bottom: dotted 4px rgb(245, 245, 245);
+            transition: 0.3s ease-in-out;
+        }
+    &:hover{
+        z-index: 999;
     }
 }
 
 .art {
     position: absolute;
-    top: 63%;
+    right: 20%;
+    top: 50%;
     display: block;
     cursor: pointer;
-    height: 150px;
-    width: 150px;
+    width: 48%;
+    aspect-ratio: 1;
     //border: 2px solid rgba(255, 255, 255, 0.548);
     border-radius: 100%;
     background:rgba(140, 190, 247, 0.486);
@@ -82,29 +100,79 @@ a {
 }
 
 footer {
+    position: absolute;
     display: flex;
     justify-content: center;
-    height: 200px;
+    height: auto;
     background: rgb(29, 29, 29);
 }
 
 @media (min-width: 666px) {
 
+    .logo {
+        fill:rgb(134, 134, 134);
+    }
+
     main {
         flex-direction: row;
-        height: 300px;
         justify-content: space-around;
     }
-    footer {
-        display: flex;
-        justify-content: space-around;
-        height: 150px;
+    .dev,
+    .art {
+        width: 20%;
+        font-size: 2.8em;
+    }
+    .dev {
+        top: 30%;
+        &::before{
+            left: 20%;
+        }
+        &::after {
+            padding: 0 100%;
+        }
     }
     
 }
 @media (min-width: 850px) {
-    .dev,
+    .dev {
+    background:rgba(204, 83, 67, 0.281);
+    font-size: 2.5em;
+    top: 50%;
+     &::after {
+         padding: 0 110%;
+         top: 2.1em;
+         left: 2.2em;
+         border: dotted 4px linear-gradient(to right, rgba(140, 190, 247, 0.686), rgba(204, 83, 67, 0.281));
+        // border-image: linear-gradient(to right, rgba(140, 190, 247, 0.686), rgba(204, 83, 67, 0.281)) 1;
+         transform: rotateZ(0deg);
+        }
+    }
     .art {
-       filter:brightness(0.5);
+    background:rgba(140, 190, 247, 0.486);
+    top: 50%;
+    font-size: 2.5em;
+
+    }
+    
+}
+@media (min-width: 1024px) {
+    header {
+        height: 5%;
+    }
+    .logo {
+        width: 5%;
+    }
+    .dev {
+    top: 40%;
+    &::before{
+        top: 50%;
+    }
+    &::after {
+        top: 50%;
+        z-index: 0;
+    }
+    }
+    .art {
+    top: 40%;
     }
 }
