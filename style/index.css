@@ -49,6 +49,20 @@ a {
   cursor: pointer;
 }
 
+.line {
+  display: inline-block;
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  border-bottom: dotted 4px white;
+  -webkit-transform: rotateZ(30deg);
+          transform: rotateZ(30deg);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
 .dev {
   position: absolute;
   display: block;
@@ -62,7 +76,8 @@ a {
   transition: 0.3s ease-in-out;
   color: white;
   font-size: 3em;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .dev::before {
@@ -72,21 +87,10 @@ a {
   left: 10%;
 }
 
-.dev::after {
-  z-index: 9;
-  content: "";
-  position: absolute;
-  top: 3.2em;
-  left: 2em;
-  -webkit-transform: rotateZ(30deg);
-          transform: rotateZ(30deg);
-  border-bottom: dotted 4px whitesmoke;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
 .dev:hover {
   z-index: 999;
+  width: 49%;
+  left: 19%;
 }
 
 .art {
@@ -99,18 +103,23 @@ a {
   aspect-ratio: 1;
   border-radius: 100%;
   background: rgba(140, 190, 247, 0.486);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
   color: white;
   font-size: 3em;
-  transition: 0.3s ease-in-out;
+  -webkit-transition: 2s ease-in-out;
+  transition: 2s ease-in-out;
 }
 
 .art::before {
-  content: "art ";
+  content: "art";
   position: relative;
   top: 40%;
   left: 45%;
+}
+
+.art:hover {
+  z-index: 999;
+  width: 49%;
+  right: 19%;
 }
 
 footer {
@@ -126,6 +135,9 @@ footer {
 }
 
 @media (min-width: 666px) {
+  .line {
+    padding: 0 25%;
+  }
   .logo {
     fill: #868686;
   }
@@ -148,9 +160,6 @@ footer {
   .dev::before {
     left: 20%;
   }
-  .dev::after {
-    padding: 0 100%;
-  }
 }
 
 @media (min-width: 850px) {
@@ -158,14 +167,6 @@ footer {
     background: rgba(204, 83, 67, 0.281);
     font-size: 2.5em;
     top: 50%;
-  }
-  .dev::after {
-    padding: 0 110%;
-    top: 2.1em;
-    left: 2.2em;
-    border: dotted 4px linear-gradient(to right, rgba(140, 190, 247, 0.686), rgba(204, 83, 67, 0.281));
-    -webkit-transform: rotateZ(0deg);
-            transform: rotateZ(0deg);
   }
   .art {
     background: rgba(140, 190, 247, 0.486);
@@ -186,10 +187,6 @@ footer {
   }
   .dev::before {
     top: 50%;
-  }
-  .dev::after {
-    top: 50%;
-    z-index: 0;
   }
   .art {
     top: 40%;
