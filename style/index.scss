@@ -1,3 +1,12 @@
+@font-face {
+    font-family: algereya-sans-thin;
+    src: url("/fonts/alegreya-sans-sc/AlegreyaSansSC-Thin.ttf");
+}
+@font-face {
+    font-family: algereya-sans-light;
+    src: url("/fonts/alegreya-sans-sc/AlegreyaSansSC-Light.ttf");
+}
+
 * {
 box-sizing: border-box;
 margin: 0;
@@ -9,6 +18,7 @@ body {
     width: 100vw;
 }
 header{
+    position: sticky;
     height: 20vh;
     background: rgba(187, 149, 155, 0.548);
     padding: 2em 0;
@@ -43,15 +53,37 @@ a {
     z-index: 9;
     position: absolute;
     top: 50%;
-    border-bottom: dotted 4px white;
+    border-bottom: dotted 2px white;
     transform:rotateZ(30deg);
     transition: 1s ease-in-out;
-    transition-delay: 1s;
+    transition-delay: .5s;
+      &::before {
+            position:absolute;
+            content: "";
+            border-bottom: dotted 2px white;
+            transform: rotateZ(-67deg);
+            //padding: 0 7%;
+            left: 1em;
+            transition: .5s ease-in-out;
+            transition-delay: .3s;
+        }
+         &::after {
+            position:absolute;
+            content: "";
+            border-bottom: dotted 2px white;
+            transform: rotateZ(-67deg);
+           // padding: 0 7%;
+            right: 1.5em;
+            transition: .5s ease-in-out;
+            transition-delay: .3s;
+        }
 
 }
 .dev {
+    font-family: algereya-sans-thin;
     position: absolute;
     display: block;
+    top: 40%;
     left: 20%;
     cursor: pointer;
     width: 48%;
@@ -60,7 +92,6 @@ a {
     border-radius: 100%;
     background:rgba(226, 132, 132, 0.514);
     transition: 0.3s ease-in-out;
-    //width: 100%;
     color: white;
     font-size: 3em;
     transition: 1s ease-in-out;
@@ -78,6 +109,7 @@ a {
 }
 
 .art {
+    font-family: algereya-sans-thin;
     position: absolute;
     right: 20%;
     top: 50%;
@@ -96,12 +128,29 @@ a {
         position: relative;
         top: 40%;
         left: 45%;
+        &:hover{
+            display: none;
+        }
     }
      &:hover{
         z-index: 999;
         width: 49%;
         right: 19%;
     }
+}
+.dev-content {
+height: 100vh;
+background-color: rgb(151, 113, 119);
+color: rgb(214, 228, 247);
+font-size: 2.5em;
+padding: 20% 30% 10% 10%;
+}
+.art-content {
+height: 100vh;
+background-color: rgb(83, 114, 134);
+color: rgb(247, 214, 237);
+font-size: 2.5em;
+padding: 20% 10% 10% 30%;
 }
 
 footer {
@@ -144,12 +193,34 @@ footer {
     background:rgba(204, 83, 67, 0.281);
     font-size: 2.5em;
     top: 50%;
+    &:hover{
+     z-index: 999;
+        width: 35%;
+        left: 20%;
+        top: 40%;
+    }
     }
     .art {
     background:rgba(140, 190, 247, 0.486);
     top: 50%;
     font-size: 2.5em;
+    &:hover{
+        z-index: 999;
+        width: 35%;
+        right: 20%;
 
+    }
+    }
+    .line {
+        transform: rotateZ(0deg);
+        top: 61%;
+        &::before {
+            padding: 0 7%;
+        }
+         &::after {
+            padding: 0 7%;
+            
+        }
     }
     
 }
@@ -160,13 +231,26 @@ footer {
     .logo {
         width: 5%;
     }
-    .dev {
-    top: 40%;
-    &::before{
-        top: 50%;
+    main {
+        height: 90vh;
     }
+    .dev{
+        top: 40%;
+        &::before{
+            top: 120px;
+            left: 10%;
+        }
     }
     .art {
-    top: 40%;
+        &::before {
+            top: 80px;
+            left: auto;
+            right: -50%;
+        }
     }
+    .line {
+        left: 21.5%;
+        padding: 0 27%;
+    }
+
 }

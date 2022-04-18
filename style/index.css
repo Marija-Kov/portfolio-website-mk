@@ -1,3 +1,13 @@
+@font-face {
+  font-family: algereya-sans-thin;
+  src: url("/fonts/alegreya-sans-sc/AlegreyaSansSC-Thin.ttf");
+}
+
+@font-face {
+  font-family: algereya-sans-light;
+  src: url("/fonts/alegreya-sans-sc/AlegreyaSansSC-Light.ttf");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -11,6 +21,8 @@ body {
 }
 
 header {
+  position: -webkit-sticky;
+  position: sticky;
   height: 20vh;
   background: rgba(187, 149, 155, 0.548);
   padding: 2em 0;
@@ -54,18 +66,46 @@ a {
   z-index: 9;
   position: absolute;
   top: 50%;
-  border-bottom: dotted 4px white;
+  border-bottom: dotted 2px white;
   -webkit-transform: rotateZ(30deg);
           transform: rotateZ(30deg);
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  -webkit-transition-delay: .5s;
+          transition-delay: .5s;
+}
+
+.line::before {
+  position: absolute;
+  content: "";
+  border-bottom: dotted 2px white;
+  -webkit-transform: rotateZ(-67deg);
+          transform: rotateZ(-67deg);
+  left: 1em;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
+}
+
+.line::after {
+  position: absolute;
+  content: "";
+  border-bottom: dotted 2px white;
+  -webkit-transform: rotateZ(-67deg);
+          transform: rotateZ(-67deg);
+  right: 1.5em;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  -webkit-transition-delay: .3s;
+          transition-delay: .3s;
 }
 
 .dev {
+  font-family: algereya-sans-thin;
   position: absolute;
   display: block;
+  top: 40%;
   left: 20%;
   cursor: pointer;
   width: 48%;
@@ -94,6 +134,7 @@ a {
 }
 
 .art {
+  font-family: algereya-sans-thin;
   position: absolute;
   right: 20%;
   top: 50%;
@@ -116,10 +157,30 @@ a {
   left: 45%;
 }
 
+.art::before:hover {
+  display: none;
+}
+
 .art:hover {
   z-index: 999;
   width: 49%;
   right: 19%;
+}
+
+.dev-content {
+  height: 100vh;
+  background-color: #977177;
+  color: #d6e4f7;
+  font-size: 2.5em;
+  padding: 20% 30% 10% 10%;
+}
+
+.art-content {
+  height: 100vh;
+  background-color: #537286;
+  color: #f7d6ed;
+  font-size: 2.5em;
+  padding: 20% 10% 10% 30%;
 }
 
 footer {
@@ -168,10 +229,32 @@ footer {
     font-size: 2.5em;
     top: 50%;
   }
+  .dev:hover {
+    z-index: 999;
+    width: 35%;
+    left: 20%;
+    top: 40%;
+  }
   .art {
     background: rgba(140, 190, 247, 0.486);
     top: 50%;
     font-size: 2.5em;
+  }
+  .art:hover {
+    z-index: 999;
+    width: 35%;
+    right: 20%;
+  }
+  .line {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+    top: 61%;
+  }
+  .line::before {
+    padding: 0 7%;
+  }
+  .line::after {
+    padding: 0 7%;
   }
 }
 
@@ -182,14 +265,24 @@ footer {
   .logo {
     width: 5%;
   }
+  main {
+    height: 90vh;
+  }
   .dev {
     top: 40%;
   }
   .dev::before {
-    top: 50%;
+    top: 120px;
+    left: 10%;
   }
-  .art {
-    top: 40%;
+  .art::before {
+    top: 80px;
+    left: auto;
+    right: -50%;
+  }
+  .line {
+    left: 21.5%;
+    padding: 0 27%;
   }
 }
 /*# sourceMappingURL=index.css.map */
