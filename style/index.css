@@ -13,8 +13,9 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: dotted 1px gray;
   font-family: basis33;
-  color: #222222;
+  color: #4e4e4e;
 }
 
 body {
@@ -56,17 +57,29 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-transform: uppercase;
   height: 100vh;
   min-width: 180px;
 }
 
-a {
-  text-decoration: none;
-  font-family: barlow-condensed-light;
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
 }
 
-a::before {
+input::after {
+  text-transform: uppercase;
+  font-family: barlow-condensed-light;
+  content: attr(label);
+  border-radius: 100%;
+  position: relative;
+  font-size: 1em;
+}
+
+input::before {
+  -webkit-filter: opacity(0);
+          filter: opacity(0);
   content: "";
   font-size: 7px;
   border: solid 7px gray;
@@ -75,6 +88,11 @@ a::before {
   position: relative;
   left: -10px;
   top: -3px;
+}
+
+input:checked::before {
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
 }
 
 #logo {

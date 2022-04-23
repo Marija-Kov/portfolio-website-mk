@@ -9,7 +9,7 @@ $pink-tinted: rgb(247, 214, 237);
     src: url("/fonts/barlowsemicondensed-light.otf");
 }
 @font-face {
-    font-family: basis33;
+    font-family: basis33; 
     src: url("/fonts/basis33.ttf");
 }
 
@@ -17,9 +17,9 @@ $pink-tinted: rgb(247, 214, 237);
 box-sizing: border-box;
 margin: 0;
 padding: 0;
-//border: dotted 1px gray;
+border: dotted 1px gray;
 font-family: basis33;
-color: rgb(34, 34, 34);
+color: rgb(78, 78, 78);
 //transition: 0.3s ease-in-out;
 }
 body {
@@ -61,22 +61,37 @@ nav {
     display: flex;
     gap: 25px;
     flex-direction: column;
-    text-transform: uppercase;  
     height: 100vh;
     min-width: 180px;
+    
 }
-a {
-    text-decoration: none;
-    font-family: barlow-condensed-light;
-    &::before {
-        content:"";
-        font-size: 7px;
-        border: solid 7px gray;
+input {
+    appearance: none;
+    cursor: pointer;
+    &::after {
+        text-transform: uppercase; 
+        font-family: barlow-condensed-light;
+        content: attr(label);
         border-radius: 100%;
-        padding: 0 4px;
         position: relative;
-        left: -10px;
-        top: -3px;
+        font-size: 1em;   
+    }
+    &::before{
+      filter: opacity(0);
+      content: "";
+      font-size: 7px;
+      border: solid 7px gray;
+      border-radius: 100%;
+      padding: 0 4px;
+      position: relative;
+      left: -10px;
+      top: -3px;
+    }
+    &:checked{
+      &::before{
+          filter: opacity(1);
+          
+      }
     }
 }
 #logo {
