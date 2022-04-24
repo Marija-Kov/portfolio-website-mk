@@ -2,27 +2,28 @@ const [red, green, blue, opacity] = [170, 247, 235, 0.9];
 const [rojo, verde, azul, opacidad] = [120, 209, 135, 0.1];
 let container = document.querySelector('.container');
 let logo = document.querySelector("#logo");
-let hello = document.querySelector('.hello')
+let hello = document.querySelector('.hello');
 
 let navHome = document.querySelector("#home");
 let navAbout = document.querySelector("#about");
 let navWork = document.querySelector('#work');
 let navContact = document.querySelector('#contact');
+let navLinks = document.querySelectorAll('.nav-link');
+let sections = document.querySelectorAll('section');
 
 //navigation // scroll
 
-navHome.addEventListener("click", () => {
-  document.querySelector("header").scrollIntoView({behavior: "smooth"});
-});
-navAbout.addEventListener('click', () => {
-    document.querySelector(".about").scrollIntoView({behavior: "smooth"});
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector(`.${link.getAttribute('id')}`).scrollIntoView();
+        link.setAttribute('aria-current', 'true');
+       navLinks.forEach(link0 => {
+           if (link0 !== link){
+               link0.removeAttribute('aria-current');
+           }
+       })
+    })
 })
-navWork.addEventListener("click", () => {
-  document.querySelector(".work").scrollIntoView({behavior: "smooth"});
-});
-navContact.addEventListener("click", () => {
-  document.querySelector(".contact").scrollIntoView({behavior: "smooth"});
-});
 
 //change background on scroll
 

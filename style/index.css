@@ -77,8 +77,8 @@ li {
 }
 
 .nav-link::before {
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+  -webkit-filter: opacity(0);
+          filter: opacity(0);
   content: "";
   font-size: 7px;
   border: solid 7px gray;
@@ -87,6 +87,11 @@ li {
   position: relative;
   left: -10px;
   top: -5px;
+}
+
+[aria-current]::before {
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
 }
 
 #logo {
