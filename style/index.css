@@ -49,6 +49,11 @@ nav {
   grid-area: nav;
   padding-top: 100px;
   padding-left: 50%;
+  height: 100vh;
+  min-width: 180px;
+}
+
+ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,29 +62,23 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh;
-  min-width: 180px;
 }
 
-input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+li {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: barlow-condensed-light;
+  font-size: 1.2em;
   cursor: pointer;
 }
 
-input::after {
-  text-transform: uppercase;
-  font-family: barlow-condensed-light;
-  content: attr(label);
-  border-radius: 100%;
-  position: relative;
-  font-size: 1em;
-}
-
-input::before {
-  -webkit-filter: opacity(0);
-          filter: opacity(0);
+.nav-link::before {
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
   content: "";
   font-size: 7px;
   border: solid 7px gray;
@@ -87,12 +86,7 @@ input::before {
   padding: 0 4px;
   position: relative;
   left: -10px;
-  top: -3px;
-}
-
-input:checked::before {
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+  top: -5px;
 }
 
 #logo {

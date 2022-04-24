@@ -58,26 +58,26 @@ nav {
     grid-area: nav;
     padding-top: 100px;
     padding-left: 50%;
-    display: flex;
-    gap: 25px;
-    flex-direction: column;
     height: 100vh;
     min-width: 180px;
     
 }
-input {
-    appearance: none;
-    cursor: pointer;
-    &::after {
-        text-transform: uppercase; 
-        font-family: barlow-condensed-light;
-        content: attr(label);
-        border-radius: 100%;
-        position: relative;
-        font-size: 1em;   
-    }
+ul {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+}
+li {
+    list-style: none;
+}
+.nav-link { 
+    text-decoration: none;
+    text-transform: uppercase; 
+    font-family: barlow-condensed-light;
+    font-size: 1.2em; 
+    cursor: pointer;  
     &::before{
-      filter: opacity(0);
+      filter: opacity(1);
       content: "";
       font-size: 7px;
       border: solid 7px gray;
@@ -85,13 +85,7 @@ input {
       padding: 0 4px;
       position: relative;
       left: -10px;
-      top: -3px;
-    }
-    &:checked{
-      &::before{
-          filter: opacity(1);
-          
-      }
+      top: -5px;
     }
 }
 #logo {
