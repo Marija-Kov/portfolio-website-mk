@@ -48,7 +48,7 @@ nav {
   -ms-grid-column: 1;
   grid-area: nav;
   padding-top: 100px;
-  padding-left: 50%;
+  padding-left: 40%;
   height: 100vh;
   min-width: 180px;
 }
@@ -74,24 +74,32 @@ li {
   font-family: barlow-condensed-light;
   font-size: 1.2em;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .nav-link::before {
   -webkit-filter: opacity(0);
           filter: opacity(0);
   content: "";
-  font-size: 7px;
-  border: solid 7px gray;
+  font-size: 8px;
+  border: solid 8px gray;
   border-radius: 100%;
-  padding: 0 4px;
+  padding: 0 5px;
   position: relative;
   left: -10px;
   top: -5px;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.nav-link:hover {
+  letter-spacing: 2px;
 }
 
 [aria-current]::before {
-  -webkit-filter: opacity(1);
-          filter: opacity(1);
+  -webkit-filter: opacity(0.9);
+          filter: opacity(0.9);
 }
 
 #logo {
@@ -108,7 +116,7 @@ li {
   font-family: 'Trebuchet MS';
 }
 
-.hello {
+section.home {
   -ms-grid-row: 2;
   -ms-grid-row-span: 3;
   -ms-grid-column: 3;
