@@ -130,6 +130,36 @@ section.home {
     left: 40%;
     transform: rotateZ(90deg);
 }
+.guideY {
+   z-index: 99;
+    position: absolute;
+    display: inline-block;
+    height: 400vh;
+    cursor: grab;
+    background:blue;
+    width: 1px;
+    //border: solid 1px rgba(0, 0, 255, 0);
+    top: 0;
+    left: 80%;
+    transform: translate(50%, 0%);
+    &:hover {
+        background: red;
+    }
+    &:active{
+        cursor: grabbing;
+    }  
+}
+.guideY-origin {
+    z-index: 100;
+    position: relative;
+    top: 400px;
+    display: inline-block;
+    width: 7px;
+    aspect-ratio: 1;
+    background: rgb(0, 128, 122);
+    border-radius: 100%;
+    transform: translate(-50%, 0%);
+}
 .guideX {
     z-index: 99;
     position: absolute;
@@ -138,7 +168,7 @@ section.home {
     background:blue;
     height: 1px;
     //border: solid 1px rgba(0, 0, 255, 0);
-    top: 50px;
+    top: 265px;
     transform: translate(0%, 50%);
     &:hover {
         background: red;

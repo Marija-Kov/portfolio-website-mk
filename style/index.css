@@ -139,6 +139,43 @@ section.home {
           transform: rotateZ(90deg);
 }
 
+.guideY {
+  z-index: 99;
+  position: absolute;
+  display: inline-block;
+  height: 400vh;
+  cursor: -webkit-grab;
+  cursor: grab;
+  background: blue;
+  width: 1px;
+  top: 0;
+  left: 80%;
+  -webkit-transform: translate(50%, 0%);
+          transform: translate(50%, 0%);
+}
+
+.guideY:hover {
+  background: red;
+}
+
+.guideY:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.guideY-origin {
+  z-index: 100;
+  position: relative;
+  top: 400px;
+  display: inline-block;
+  width: 7px;
+  aspect-ratio: 1;
+  background: #00807a;
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
 .guideX {
   z-index: 99;
   position: absolute;
@@ -147,7 +184,7 @@ section.home {
   cursor: grab;
   background: blue;
   height: 1px;
-  top: 50px;
+  top: 265px;
   -webkit-transform: translate(0%, 50%);
           transform: translate(0%, 50%);
 }

@@ -5,8 +5,11 @@ let logo = document.querySelector("#logo");
 let hello = document.querySelector('section.home');
 let navLinks = document.querySelectorAll('.nav-link');
 let sections = document.querySelectorAll('section');
+
 let guideX = document.querySelector('.guideX');
 let guideXOrigin = document.querySelector(".guideX-origin");
+let guideY = document.querySelector(".guideY");
+let guideYOrigin = document.querySelector(".guideY-origin");
 
 //navigation // scroll
 navLinks.forEach(link => {
@@ -53,7 +56,20 @@ guideX.addEventListener('mouseup', () => {
    window.removeEventListener('mousemove', dragGuideX);
 });
 
+function dragGuideY(e) {
+  guideY.style.left = `${e.pageX}px`;
+  guideY.style.top = "0px";
+}
+
+guideY.addEventListener("mousedown", () => {
+  window.addEventListener("mousemove", dragGuideY);
+});
+guideY.addEventListener("mouseup", () => {
+  window.removeEventListener("mousemove", dragGuideY);
+});
+
 //move guide origin to cursor position on guide
+
 function moveGuideXOrigin(e) {
     guideXOrigin.style.left = `${e.pageX}px`;
 }
@@ -62,6 +78,16 @@ guideX.addEventListener('mousedown', () => {
 });
 guideX.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideXOrigin);
+});
+
+function moveGuideYOrigin(e) {
+  guideYOrigin.style.top = `${e.pageY}px`;
+}
+guideY.addEventListener("mousedown", () => {
+  window.addEventListener("mousemove", moveGuideYOrigin);
+});
+guideY.addEventListener("mouseup", () => {
+  window.removeEventListener("mousemove", moveGuideYOrigin);
 });
     
 
