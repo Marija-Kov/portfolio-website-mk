@@ -13,7 +13,6 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: dotted 1px gray;
   font-family: basis33;
   color: #4e4e4e;
 }
@@ -138,6 +137,42 @@ section.home {
   left: 40%;
   -webkit-transform: rotateZ(90deg);
           transform: rotateZ(90deg);
+}
+
+.guideX {
+  z-index: 99;
+  position: absolute;
+  width: 100vw;
+  cursor: -webkit-grab;
+  cursor: grab;
+  background: blue;
+  height: 1px;
+  top: 50px;
+  -webkit-transform: translate(0%, 50%);
+          transform: translate(0%, 50%);
+}
+
+.guideX:hover {
+  background: red;
+}
+
+.guideX:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.guideX-origin {
+  z-index: 100;
+  position: relative;
+  top: 0;
+  display: inline-block;
+  left: 400px;
+  height: 7px;
+  aspect-ratio: 1;
+  background: #00807a;
+  border-radius: 100%;
+  -webkit-transform: translate(0%, -100%);
+          transform: translate(0%, -100%);
 }
 
 .about {

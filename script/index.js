@@ -5,6 +5,8 @@ let logo = document.querySelector("#logo");
 let hello = document.querySelector('section.home');
 let navLinks = document.querySelectorAll('.nav-link');
 let sections = document.querySelectorAll('section');
+let guideX = document.querySelector('.guideX');
+let guideXOrigin = document.querySelector(".guideX-origin");
 
 //navigation // scroll
 navLinks.forEach(link => {
@@ -34,12 +36,34 @@ const observer = new IntersectionObserver(entries => {
   threshold: 0.6
  }
 )
-
-
 sections.forEach(section => {
     observer.observe(section)
 })
 
+//draggable guide lines
+function dragGuideX(e) {
+   guideX.style.top = `${e.pageY}px`; 
+   guideX.style.left = "0px";
+}
+
+guideX.addEventListener('mousedown', () => {
+   window.addEventListener('mousemove', dragGuideX);
+});
+guideX.addEventListener('mouseup', () => {
+   window.removeEventListener('mousemove', dragGuideX);
+});
+
+//move guide origin to cursor position on guide
+function moveGuideXOrigin(e) {
+    guideXOrigin.style.left = `${e.pageX}px`;
+}
+guideX.addEventListener('mousedown', () => {
+   window.addEventListener('mousemove', moveGuideXOrigin);
+});
+guideX.addEventListener("mouseup", () => {
+  window.removeEventListener("mousemove", moveGuideXOrigin);
+});
+    
 
 
 
@@ -58,6 +82,8 @@ window.addEventListener("scroll", () => {
   const a = opacidad * y / 1.2;
   document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
 });
+
+//fade elements on scroll
 
 window.addEventListener('scroll', () => {
    let y = (window.scrollY || window.pageYOffset) / 20;
