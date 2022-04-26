@@ -11,6 +11,10 @@ let guideXOrigin = document.querySelector(".guideX-origin");
 let guideY = document.querySelector(".guideY");
 let guideYOrigin = document.querySelector(".guideY-origin");
 
+let ham = document.querySelector('#ham');
+let nav = document.querySelector('nav');
+let close = document.querySelector('#close');
+
 //navigation // scroll
 
 navLinks.forEach(link => {
@@ -42,7 +46,16 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section)
 })
+//hamburger menu:
 
+ham.addEventListener('click', () => {
+    nav.style = "display: block";
+    ham.style = "display: none";
+    close.addEventListener('click', () => {
+     nav.style = "display: none";
+     ham.style = "display: block";   
+    })
+})
 //draggable guide lines:
 
 function dragGuideX(e) {

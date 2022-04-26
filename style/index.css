@@ -13,7 +13,6 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: dotted 1px gray;
   font-family: basis33;
   color: #4e4e4e;
 }
@@ -102,6 +101,10 @@ li {
           filter: opacity(0.9);
 }
 
+#close {
+  display: none;
+}
+
 #logo {
   -ms-grid-row: 2;
   -ms-grid-row-span: 6;
@@ -129,7 +132,7 @@ li {
 }
 
 .guideY {
-  z-index: 99;
+  z-index: 55;
   position: absolute;
   display: inline-block;
   height: 400vh;
@@ -165,7 +168,7 @@ li {
 }
 
 .guideX {
-  z-index: 99;
+  z-index: 55;
   position: absolute;
   width: 100vw;
   cursor: -webkit-grab;
@@ -234,7 +237,7 @@ section.home {
   display: -ms-flexbox;
   display: flex;
   font-size: 100px;
-  border: dashed 20px rgba(0, 0, 0, 0.158);
+  border: dashed 15px rgba(0, 0, 0, 0.158);
 }
 
 .contact {
@@ -291,12 +294,30 @@ footer {
             flex-direction: column;
   }
   nav {
+    z-index: 66;
     display: none;
+    position: fixed;
+    height: 50vh;
+    width: 100vw;
+    background: rgba(240, 240, 240, 0.849);
+  }
+  ul {
+    gap: 50px;
+  }
+  #close {
+    display: inline-block;
+    font-size: 100px;
+    position: absolute;
+    top: 4px;
+    right: 43px;
+    cursor: pointer;
+    -webkit-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
   }
   section.home {
+    font-size: 40px;
     padding-top: 0;
     padding: 0 12%;
-    line-height: 130%;
   }
   .about {
     padding-left: 0;
@@ -304,18 +325,33 @@ footer {
     margin: 0 auto;
   }
   #logo {
-    display: none;
+    z-index: -1;
+    position: fixed;
+    top: 40%;
+    line-height: 90%;
+    font-size: 210px;
+    padding-left: 4%;
+    color: black;
+  }
+  #ham {
+    z-index: 77;
+    position: fixed;
+    font-size: 60px;
+    height: 60px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: solid 18px rgba(0, 0, 0, 0.659);
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  #ham:hover {
+    border: solid 30px rgba(0, 0, 0, 0.959);
   }
   #slashes {
-    position: absolute;
-    z-index: -1;
-    font-size: 150px;
-    color: gray;
-    font-family: 'Trebuchet MS';
-    top: 40%;
-    left: -50%;
-    -webkit-transform: rotateZ(90deg);
-            transform: rotateZ(90deg);
+    display: none;
   }
 }
 /*# sourceMappingURL=index.css.map */
