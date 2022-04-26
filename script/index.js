@@ -72,6 +72,7 @@ guideY.addEventListener("mouseup", () => {
 
 function moveGuideXOrigin(e) {
     guideXOrigin.style.left = `${e.pageX}px`;
+    intersect();
 }
 guideX.addEventListener('mousedown', () => {
    window.addEventListener('mousemove', moveGuideXOrigin);
@@ -82,14 +83,37 @@ guideX.addEventListener("mouseup", () => {
 
 function moveGuideYOrigin(e) {
   guideYOrigin.style.top = `${e.pageY}px`;
+  intersect();
 }
 guideY.addEventListener("mousedown", () => {
   window.addEventListener("mousemove", moveGuideYOrigin);
+  
 });
 guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideYOrigin);
 });
-    
+
+//randomize starting position of guides and their origins
+
+function randomGuideAndOriginPos(){
+    guideX.style.top = `${Math.random() * 600}px`;
+    guideY.style.left = `${Math.random() * window.innerWidth}px`;
+    guideXOrigin.style.left = `${Math.random() * window.innerWidth}px`;
+    guideYOrigin.style.top = `${Math.random() * 600}px`;
+}
+
+randomGuideAndOriginPos();
+//detect guide/origin intersection
+
+function intersect(){
+    if (guideXOrigin.style.left === guideY.style.left ||
+        guideYOrigin.style.top === guideX.style.top ||
+        (guideXOrigin.style.left === guideYOrigin.style.left &&
+         guideYOrigin.style.top === guideXOrigin.style.top)){
+            console.log('intersected')
+        }
+
+}
 
 
 
