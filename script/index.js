@@ -12,6 +12,7 @@ let guideY = document.querySelector(".guideY");
 let guideYOrigin = document.querySelector(".guideY-origin");
 
 //navigation // scroll
+
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
          document.querySelector(`.${link.getAttribute('id')}`).scrollIntoView({behavior: "smooth"});
@@ -32,7 +33,6 @@ const observer = new IntersectionObserver(entries => {
     }
     let current = document.querySelector(`#${entry.target.getAttribute("class")}`);
     current.click()
-    //console.log(entry.target.getAttribute("class"));
  })
 },
  {
@@ -43,7 +43,8 @@ sections.forEach(section => {
     observer.observe(section)
 })
 
-//draggable guide lines
+//draggable guide lines:
+
 function dragGuideX(e) {
    guideX.style.top = `${e.pageY}px`; 
    guideX.style.left = "0px";
@@ -68,7 +69,7 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", dragGuideY);
 });
 
-//move guide origin to cursor position on guide
+//move guide origin to cursor position on guide:
 
 function moveGuideXOrigin(e) {
     guideXOrigin.style.left = `${e.pageX}px`;
@@ -103,7 +104,8 @@ function randomGuideAndOriginPos(){
 }
 
 randomGuideAndOriginPos();
-//detect guide/origin intersection
+
+//detect guide/origin intersection:
 
 function intersect(){
     if (guideXOrigin.style.left === guideY.style.left ||
@@ -117,7 +119,7 @@ function intersect(){
 
 
 
-//change background colour on scroll
+//change background colour on scroll:
 
 window.addEventListener('scroll', () => {
 let y = 1 + (window.scrollY || window.pageYOffset) / 150;
@@ -133,7 +135,7 @@ window.addEventListener("scroll", () => {
   document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
 });
 
-//fade elements on scroll
+//fade elements on scroll:
 
 window.addEventListener('scroll', () => {
    let y = (window.scrollY || window.pageYOffset) / 20;

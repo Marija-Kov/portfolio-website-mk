@@ -13,6 +13,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: dotted 1px gray;
   font-family: basis33;
   color: #4e4e4e;
 }
@@ -115,18 +116,6 @@ li {
   font-family: 'Trebuchet MS';
 }
 
-section.home {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: hello;
-  padding-top: 140px;
-  padding-left: 5%;
-  height: 75vh;
-  font-size: 28px;
-}
-
 #slashes {
   position: absolute;
   z-index: -1;
@@ -147,7 +136,7 @@ section.home {
   cursor: -webkit-grab;
   cursor: grab;
   background: blue;
-  width: 1px;
+  width: 0.5px;
   top: 0;
   left: 600px;
   -webkit-transform: translate(50%, 0%);
@@ -171,8 +160,8 @@ section.home {
   aspect-ratio: 1;
   background: #c04646;
   border-radius: 100%;
-  -webkit-transform: translate(-70%, -50%);
-          transform: translate(-70%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .guideX {
@@ -182,7 +171,7 @@ section.home {
   cursor: -webkit-grab;
   cursor: grab;
   background: blue;
-  height: 1px;
+  height: 0.5px;
   top: 265px;
   -webkit-transform: translate(0%, 50%);
           transform: translate(0%, 50%);
@@ -208,6 +197,18 @@ section.home {
   border-radius: 100%;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
+}
+
+section.home {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: hello;
+  padding-top: 140px;
+  padding-left: 5%;
+  height: 75vh;
+  font-size: 28px;
 }
 
 .about {
@@ -266,5 +267,55 @@ footer {
   display: inline-block;
   position: relative;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+        grid-template-areas: 'nav header header header ' 'nav logo hello aside' 'nav logo hello aside' 'nav logo hello aside' 'nav about about aside' 'nav about about aside' 'nav about about aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav contact contact aside' 'nav contact contact aside' 'nav footer footer footer' 'nav footer footer footer';
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .about {
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav {
+    display: none;
+  }
+  section.home {
+    padding-top: 0;
+    padding: 0 12%;
+    line-height: 130%;
+  }
+  .about {
+    padding-left: 0;
+    padding: 0 12%;
+    margin: 0 auto;
+  }
+  #logo {
+    display: none;
+  }
+  #slashes {
+    position: absolute;
+    z-index: -1;
+    font-size: 150px;
+    color: gray;
+    font-family: 'Trebuchet MS';
+    top: 40%;
+    left: -50%;
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
 }
 /*# sourceMappingURL=index.css.map */
