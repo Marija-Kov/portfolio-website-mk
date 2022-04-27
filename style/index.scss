@@ -18,6 +18,12 @@ color: rgb(78, 78, 78);
 //transition: 0.3s ease-in-out;
 }
 
+@mixin center-aligned {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     width: 100vw;
 }
@@ -27,12 +33,12 @@ body {
     background-color:rgba(170, 247, 235, 0.94);
     grid-template-areas: 
     'nav header header header header header'
-    'nav logo hello hello hello aside'
-    'nav logo hello hello hello aside'
-    'nav logo hello hello hello aside'
-    'nav logo about about about aside'
-    'nav logo about about about aside'
-    'nav logo about about about aside'
+    'nav hello hello hello hello aside'
+    'nav hello hello hello hello aside'
+    'nav hello hello hello hello aside'
+    'nav about about about about aside'
+    'nav about about about about aside'
+    'nav about about about about aside'
     'nav work work work work aside'
     'nav work work work work aside'
     'nav work work work work aside'
@@ -58,17 +64,16 @@ nav {
     padding-left: 40%;
     height: 100vh;
     min-width: 180px;
-    
-}
-ul {
+
+    ul {
     display: flex;
     gap: 25px;
     flex-direction: column;
-}
-li {
+
+    li {
     list-style: none;
-}
-.nav-link { 
+
+    .nav-link { 
     text-decoration: none;
     text-transform: uppercase; 
     font-family: barlow-condensed-light;
@@ -90,40 +95,22 @@ li {
     &:hover {
         letter-spacing: 2px;
     }
-}
+ }
 
-[aria-current] {
-    &::before {
+  [aria-current] {
+     &::before {
         filter: opacity(0.9);
     }
+   }
+ }
+}   
 }
+
 #close {
     display: none;
 }
+
 // symbols, ornaments, interactive elements: 
-
-#logo {
-    grid-area: logo;
-    font-size: 75px;
-    color: rgba(124, 124, 124, 1);
-    padding-top: 50px;
-    min-width: 180px;
-    text-align: right;
-    height: 75vh;
-    //background:rgba(251, 255, 189, 0.555);
-    font-family: 'Trebuchet MS';
-}
-
-#slashes {
-    position: absolute;
-    z-index: -1;
-    font-size: 100px;
-    color: gray;
-    font-family: 'Trebuchet MS';
-    top: 14%;
-    left: 40%;
-    transform: rotateZ(90deg);
-}
 
 .guideY {
    z-index: 55;
@@ -142,8 +129,7 @@ li {
     &:active{
         cursor: grabbing;
     }  
-}
-.guideY-origin {
+    .guideY-origin {
     position: relative;
     top: 400px;
     display: inline-block;
@@ -152,7 +138,9 @@ li {
     background: rgb(192, 70, 70);
     border-radius: 100%;
     transform: translate(-50%, -50%);
+  }
 }
+
 .guideX {
     z-index: 55;
     position: absolute;
@@ -168,8 +156,7 @@ li {
     &:active{
         cursor: grabbing;
     }
-}
-.guideX-origin {
+   .guideX-origin {
     position: relative;
     top: 0;
     display: inline-block;
@@ -179,7 +166,9 @@ li {
     background: rgb(192, 70, 70);;
     border-radius: 100%;
     transform: translate(-50%, -100%);
+   } 
 }
+
 
 //actual information:
 
@@ -188,7 +177,7 @@ section.home {
     padding-top: 140px;
     padding-left: 5%;
     height: 75vh;
-    font-size: 28px;
+    font-size: 40px;
 }
 
 .about {
@@ -201,14 +190,30 @@ section.home {
 .work {
     grid-area: work;
     height: 100vh;
-    display: flex;
-    
     font-size: 100px;
-    border: dashed 15px rgba(0, 0, 0, 0.158);
+   //border: dashed 15px rgba(0, 0, 0, 0.158);
+    // overflow-x: hidden;
+    // overflow-y: auto;
+    transform-style: "preserve-3d";
+    
+  .work-top {
+      @include center-aligned;
+      inset: 0;
+     // background: rgba(241, 200, 145, 0.384);
+      height: 100%;
+      transform: translateZ(200px);
+  }
+  .work-base {
+    @include center-aligned;
+    inset: 0;
+    height: 100%;
+    background: rgba(255, 192, 203, 0.473);
+  }
 }
+
 .contact {
     grid-area: contact;
-    height: 50vh;
+    height: 70vh;
 }
 aside {
     grid-area: aside;
@@ -216,13 +221,14 @@ aside {
 }
 footer {
     grid-area: footer;
-    height: 50vh;
-}
-.attribution {
+    height: 30vh;
+  .attribution {
     display: inline-block;
     position: relative;
     margin: 0 auto;
+  }  
 }
+
 
 
 @media screen and (max-width: 1024px) {
@@ -230,9 +236,9 @@ footer {
     .container {
     grid-template-areas: 
     'nav header header header '
-    'nav logo hello aside'
-    'nav logo hello aside'
-    'nav logo hello aside'
+    'nav hello hello aside'
+    'nav hello hello aside'
+    'nav hello hello aside'
     'nav about about aside'
     'nav about about aside'
     'nav about about aside'
@@ -282,7 +288,6 @@ footer {
     }
 
     section.home {
-        font-size: 40px;
         padding-top: 0;
         padding: 0 12%;
     }
@@ -291,19 +296,10 @@ footer {
         padding: 0 12%;
         margin: 0 auto;
     }
-    #logo {
-        z-index: -1;
-        position: fixed;
-        top: 40%;
-        line-height: 90%;
-        font-size: 210px;
-        padding-left: 4%;
-        color: black;
-    }
+
     #ham {
         z-index: 77;
         position: fixed;
-        font-size: 60px;
         height: 60px;
         aspect-ratio: 1;
         border-radius: 100%;
@@ -311,16 +307,17 @@ footer {
         top: 20px;
         right: 20px;
         cursor: pointer;
-        transition: 0.3s;
         &:hover {
-        border: solid 30px rgba(0, 0, 0, 0.959);
+        border: solid 14px rgb(37, 37, 37);
+        background: rgb(37, 37, 37);
+        &::before {
+            content: "nav";
+            color: white;
+            font-size: 20px;
+        }
         }
     }
 
-   
-    #slashes {
-    display: none;
-    }
 
 
 }

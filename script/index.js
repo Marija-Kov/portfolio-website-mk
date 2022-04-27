@@ -1,5 +1,6 @@
-const [red, green, blue, opacity] = [170, 247, 235, 0.9];
+const [red, green, blue, opacity] = [170, 227, 245, 0.9];
 const [rojo, verde, azul, opacidad] = [120, 209, 135, 0.1];
+
 let container = document.querySelector('.container');
 let logo = document.querySelector("#logo");
 let hello = document.querySelector('section.home');
@@ -14,6 +15,11 @@ let guideYOrigin = document.querySelector(".guideY-origin");
 let ham = document.querySelector('#ham');
 let nav = document.querySelector('nav');
 let close = document.querySelector('#close');
+
+//parallax variables
+let workTop = document.querySelector('.work-top');
+let workBase = document.querySelector(".work-base");
+
 
 //navigation // scroll
 
@@ -150,8 +156,14 @@ window.addEventListener("scroll", () => {
 
 //fade elements on scroll:
 
-window.addEventListener('scroll', () => {
-   let y = (window.scrollY || window.pageYOffset) / 20;
-   logo.style.opacity = 0.99/ y; 
-   hello.style.opacity = 0.99/ y;
+// window.addEventListener('scroll', () => {
+//    let y = (window.scrollY || window.pageYOffset) / 20;
+//    hello.style.opacity = 0.99/ y;
+// })
+
+//parallax .work
+
+window.addEventListener('scroll', ()=> {
+  let rate = ((window.scrollY || window.pageYOffset) * -0.5);
+  workBase.style.transform = `translate3d(0px, ${rate}px, 0px)`;
 })
