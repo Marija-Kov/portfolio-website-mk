@@ -16,10 +16,8 @@
 box-sizing: border-box;
 margin: 0;
 padding: 0;
-//border: dotted 1px gray;
 font-family: basis33;
 color: rgb(78, 78, 78);
-//transition: 0.3s ease-in-out;
 }
 
 @mixin center-aligned {
@@ -30,6 +28,10 @@ color: rgb(78, 78, 78);
 
 body {
     width: 100vw;
+}
+
+h1, h2 {
+    font-family: hiragino-sans;
 }
 
 .container {
@@ -64,10 +66,11 @@ nav {
     position: sticky;
     top: 0;
     grid-area: nav;
-    padding-top: 100px;
-    padding-left: 40%;
+    padding-top: 40%;
+    padding-left: 35%;
     height: 100vh;
     min-width: 180px;
+    border-right: solid 1px rgb(240, 240, 240);
 
     ul {
     display: flex;
@@ -179,12 +182,10 @@ nav {
 section.home {
     grid-area: hello;
     padding-top: 10%;
-    padding-left: 5%;
+    padding-left: 3%;
     height: 80vh;
     h1 {
-        font-family: hiragino-sans;
-        font-size: 300%;
-        //letter-spacing: .5px;
+        font-size: max(350%)
     }
 }
 
@@ -203,6 +204,7 @@ section.home {
     height: 100vh;
     transform-style: "preserve-3d";
     h2 {
+        display:none;
         font-family: hiragino-sans;
         padding-left: 55px;
     }
@@ -234,6 +236,7 @@ aside {
 footer {
     grid-area: footer;
     height: 30vh;
+    @include center-aligned;
   .attribution {
     display: inline-block;
     position: relative;
@@ -264,7 +267,11 @@ footer {
     'nav footer footer footer';
     grid-template-columns: repeat(4, 1fr);
     }
-
+    section.home {
+    h1 {
+        font-size: max(300%)
+     }
+    }
     .about {
     padding-top: 0;
     }
@@ -281,10 +288,11 @@ footer {
     nav {
     z-index: 66;
     display: none;
+    padding-top: 100px;
     position: fixed;
     height: 50vh;
     width: 100vw;
-    background:rgba(240, 240, 240, 0.849);
+    background:rgb(240, 240, 240);
    }
    ul {
     gap: 50px;
@@ -302,12 +310,19 @@ footer {
     section.home {
         padding-top: 0;
         padding: 0 12%;
+        h1 {
+        font-size: max(250%)
+        }
     }
     .about {
         padding-left: 0;
         padding: 0 12%;
         margin: 0 auto;
     }
+    .contact {
+        padding: 0 10%;
+    }
+    
 
     #ham {
         z-index: 77;
@@ -315,19 +330,23 @@ footer {
         height: 60px;
         aspect-ratio: 1;
         border-radius: 100%;
-        border: solid 18px rgba(0, 0, 0, 0.659);
+        border: solid 18px rgb(37, 37, 37);
         top: 20px;
         right: 20px;
         cursor: pointer;
+        transition: 0.3s;
         &:hover {
         border: solid 14px rgb(37, 37, 37);
-        background: rgb(37, 37, 37);
         &::before {
-            content: "nav";
-            color: white;
+            @include center-aligned;
+            content: '';
             font-size: 20px;
         }
-        }
+      }
+    }
+
+    aside {
+        display: none;
     }
 
 

@@ -26,6 +26,10 @@ body {
   width: 100vw;
 }
 
+h1, h2 {
+  font-family: hiragino-sans;
+}
+
 .container {
   display: -ms-grid;
   display: grid;
@@ -51,10 +55,11 @@ nav {
   -ms-grid-row-span: 15;
   -ms-grid-column: 1;
   grid-area: nav;
-  padding-top: 100px;
-  padding-left: 40%;
+  padding-top: 40%;
+  padding-left: 35%;
   height: 100vh;
   min-width: 180px;
+  border-right: solid 1px #f0f0f0;
 }
 
 nav ul {
@@ -188,13 +193,12 @@ section.home {
   -ms-grid-column-span: 4;
   grid-area: hello;
   padding-top: 10%;
-  padding-left: 5%;
+  padding-left: 3%;
   height: 80vh;
 }
 
 section.home h1 {
-  font-family: hiragino-sans;
-  font-size: 300%;
+  font-size: 350%;
 }
 
 .about {
@@ -225,6 +229,7 @@ section.home h1 {
 }
 
 .work h2 {
+  display: none;
   font-family: hiragino-sans;
   padding-left: 55px;
 }
@@ -286,6 +291,15 @@ footer {
   -ms-grid-column-span: 5;
   grid-area: footer;
   height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .attribution {
@@ -299,6 +313,9 @@ footer .attribution {
         grid-template-areas: 'nav header header header ' 'nav hello hello aside' 'nav hello hello aside' 'nav hello hello aside' 'nav about about aside' 'nav about about aside' 'nav about about aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav contact contact aside' 'nav contact contact aside' 'nav footer footer footer' 'nav footer footer footer';
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+  }
+  section.home h1 {
+    font-size: 300%;
   }
   .about {
     padding-top: 0;
@@ -318,10 +335,11 @@ footer .attribution {
   nav {
     z-index: 66;
     display: none;
+    padding-top: 100px;
     position: fixed;
     height: 50vh;
     width: 100vw;
-    background: rgba(240, 240, 240, 0.849);
+    background: #f0f0f0;
   }
   ul {
     gap: 50px;
@@ -340,10 +358,16 @@ footer .attribution {
     padding-top: 0;
     padding: 0 12%;
   }
+  section.home h1 {
+    font-size: 250%;
+  }
   .about {
     padding-left: 0;
     padding: 0 12%;
     margin: 0 auto;
+  }
+  .contact {
+    padding: 0 10%;
   }
   #ham {
     z-index: 77;
@@ -351,19 +375,31 @@ footer .attribution {
     height: 60px;
     aspect-ratio: 1;
     border-radius: 100%;
-    border: solid 18px rgba(0, 0, 0, 0.659);
+    border: solid 18px #252525;
     top: 20px;
     right: 20px;
     cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
   #ham:hover {
     border: solid 14px #252525;
-    background: #252525;
   }
   #ham:hover::before {
-    content: "nav";
-    color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    content: '';
     font-size: 20px;
+  }
+  aside {
+    display: none;
   }
 }
 /*# sourceMappingURL=index.css.map */
