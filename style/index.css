@@ -8,6 +8,11 @@
   src: url("/fonts/basis33.ttf");
 }
 
+@font-face {
+  font-family: hiragino-sans;
+  src: url("/fonts/HiraginoSans.ttc");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -35,7 +40,7 @@ header {
   -ms-grid-column: 2;
   -ms-grid-column-span: 5;
   grid-area: header;
-  height: 25vh;
+  height: 20vh;
 }
 
 nav {
@@ -82,7 +87,7 @@ nav ul li .nav-link::before {
           filter: opacity(0);
   content: "";
   font-size: 8px;
-  border: solid 8px gray;
+  border: solid 8px #4d4d4d;
   border-radius: 100%;
   padding: 0 5px;
   position: relative;
@@ -97,8 +102,8 @@ nav ul li .nav-link:hover {
 }
 
 nav ul li [aria-current]::before {
-  -webkit-filter: opacity(0.9);
-          filter: opacity(0.9);
+  -webkit-filter: opacity(1);
+          filter: opacity(1);
 }
 
 #close {
@@ -182,10 +187,14 @@ section.home {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-area: hello;
-  padding-top: 140px;
+  padding-top: 10%;
   padding-left: 5%;
-  height: 75vh;
-  font-size: 40px;
+  height: 80vh;
+}
+
+section.home h1 {
+  font-family: hiragino-sans;
+  font-size: 300%;
 }
 
 .about {
@@ -200,6 +209,10 @@ section.home {
   font-size: 1.2em;
 }
 
+.about h2 {
+  font-family: hiragino-sans;
+}
+
 .work {
   -ms-grid-row: 8;
   -ms-grid-row-span: 4;
@@ -207,9 +220,13 @@ section.home {
   -ms-grid-column-span: 4;
   grid-area: work;
   height: 100vh;
-  font-size: 100px;
   -webkit-transform-style: "preserve-3d";
           transform-style: "preserve-3d";
+}
+
+.work h2 {
+  font-family: hiragino-sans;
+  padding-left: 55px;
 }
 
 .work .work-top {
@@ -223,6 +240,7 @@ section.home {
       -ms-flex-align: center;
           align-items: center;
   inset: 0;
+  font-size: 100px;
   height: 100%;
   -webkit-transform: translateZ(200px);
           transform: translateZ(200px);
@@ -238,9 +256,10 @@ section.home {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 100px;
   inset: 0;
   height: 100%;
-  background: rgba(255, 192, 203, 0.473);
+  background: rgba(255, 192, 203, 0.173);
 }
 
 .contact {
