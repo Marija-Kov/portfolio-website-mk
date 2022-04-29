@@ -5,6 +5,7 @@ let container = document.querySelector('.container');
 let logo = document.querySelector("#logo");
 let hello = document.querySelector('section.home');
 let navLinks = document.querySelectorAll('.nav-link');
+let about = document.querySelector(".about");
 let sections = document.querySelectorAll('section');
 
 let guideX = document.querySelector('.guideX');
@@ -16,7 +17,7 @@ let ham = document.querySelector('#ham');
 let nav = document.querySelector('nav');
 let close = document.querySelector('#close');
 
-//parallax variables
+//. work parallax variables
 let workTop = document.querySelector('.work-top');
 let workBase = document.querySelector(".work-base");
 
@@ -156,10 +157,10 @@ window.addEventListener("scroll", () => {
 
 //fade elements on scroll:
 
-// window.addEventListener('scroll', () => {
-//    let y = (window.scrollY || window.pageYOffset) / 20;
-//    hello.style.opacity = 0.99/ y;
-// })
+window.addEventListener('scroll', () => {
+   let y = (window.scrollY || window.pageYOffset) / 20;
+   about.style.opacity = 0.05 * y;
+})
 
 //parallax .work
 

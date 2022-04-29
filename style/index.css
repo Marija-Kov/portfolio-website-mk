@@ -27,7 +27,15 @@ body {
 }
 
 h1, h2 {
-  font-family: hiragino-sans;
+  font-family: hiragino-sans, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: clamp(45px, 5vw, 60px);
+}
+
+h2 {
+  font-size: clamp(24px, 3vw, 36px);
 }
 
 .container {
@@ -81,7 +89,7 @@ nav ul li .nav-link {
   text-decoration: none;
   text-transform: uppercase;
   font-family: barlow-condensed-light;
-  font-size: 1.2em;
+  font-size: 1.1em;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -197,10 +205,6 @@ section.home {
   height: 80vh;
 }
 
-section.home h1 {
-  font-size: 350%;
-}
-
 .about {
   -ms-grid-row: 5;
   -ms-grid-row-span: 3;
@@ -210,11 +214,10 @@ section.home h1 {
   height: 100vh;
   padding-left: 5%;
   padding-top: 100px;
-  font-size: 1.2em;
 }
 
-.about h2 {
-  font-family: hiragino-sans;
+.about > p {
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 .work {
@@ -234,23 +237,7 @@ section.home h1 {
   padding-left: 55px;
 }
 
-.work .work-top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  inset: 0;
-  font-size: 100px;
-  height: 100%;
-  -webkit-transform: translateZ(200px);
-          transform: translateZ(200px);
-}
-
+.work .work-top,
 .work .work-base {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,9 +248,17 @@ section.home h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 100px;
   inset: 0;
+  font-size: clamp(60px, 8vw, 100px);
   height: 100%;
+}
+
+.work .work-top {
+  -webkit-transform: translateZ(200px);
+          transform: translateZ(200px);
+}
+
+.work .work-base {
   background: rgba(255, 192, 203, 0.173);
 }
 
@@ -274,6 +269,10 @@ section.home h1 {
   -ms-grid-column-span: 4;
   grid-area: contact;
   height: 70vh;
+}
+
+.contact > p {
+  font-size: clamp(16px, 3vw, 20px);
 }
 
 aside {
@@ -313,9 +312,6 @@ footer .attribution {
         grid-template-areas: 'nav header header header ' 'nav hello hello aside' 'nav hello hello aside' 'nav hello hello aside' 'nav about about aside' 'nav about about aside' 'nav about about aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav contact contact aside' 'nav contact contact aside' 'nav footer footer footer' 'nav footer footer footer';
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-  }
-  section.home h1 {
-    font-size: 300%;
   }
   .about {
     padding-top: 0;
@@ -357,9 +353,6 @@ footer .attribution {
   section.home {
     padding-top: 0;
     padding: 0 12%;
-  }
-  section.home h1 {
-    font-size: 250%;
   }
   .about {
     padding-left: 0;

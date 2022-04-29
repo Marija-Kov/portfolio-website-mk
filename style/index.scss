@@ -31,9 +31,14 @@ body {
 }
 
 h1, h2 {
-    font-family: hiragino-sans;
+    font-family: hiragino-sans, Arial, Helvetica, sans-serif;
 }
-
+h1 {
+    font-size: clamp(45px, 5vw, 60px);
+}
+h2 {
+    font-size: clamp(24px, 3vw, 36px)
+}
 .container {
     display: grid;
     background-color:rgba(170, 247, 235, 0.94);
@@ -84,7 +89,7 @@ nav {
     text-decoration: none;
     text-transform: uppercase; 
     font-family: barlow-condensed-light;
-    font-size: 1.2em; 
+    font-size: 1.1em; 
     cursor: pointer; 
     transition: 0.3s; 
     &::before{
@@ -184,9 +189,6 @@ section.home {
     padding-top: 10%;
     padding-left: 3%;
     height: 80vh;
-    h1 {
-        font-size: max(350%)
-    }
 }
 
 .about {
@@ -194,11 +196,11 @@ section.home {
     height: 100vh;
     padding-left: 5%;
     padding-top: 100px;
-    font-size: 1.2em;
-    h2 {
-        font-family: hiragino-sans;
-    }
+    
 }
+.about > p {
+        font-size: clamp(16px, 3vw, 20px);
+    }
 .work {
     grid-area: work;
     height: 100vh;
@@ -208,19 +210,17 @@ section.home {
         font-family: hiragino-sans;
         padding-left: 55px;
     }
-    
-  .work-top {
-      @include center-aligned;
+  .work-top,
+  .work-base {
+    @include center-aligned;
       inset: 0;
-      font-size: 100px;
-      height: 100%;
+      font-size: clamp(60px, 8vw, 100px);
+      height: 100%;   
+  } 
+  .work-top {
       transform: translateZ(200px);
   }
   .work-base {
-    @include center-aligned;
-    font-size: 100px;
-    inset: 0;
-    height: 100%;
     background: rgba(255, 192, 203, 0.173);
   }
 }
@@ -228,6 +228,9 @@ section.home {
 .contact {
     grid-area: contact;
     height: 70vh;
+}
+.contact > p {
+    font-size: clamp(16px, 3vw, 20px);
 }
 aside {
     grid-area: aside;
@@ -267,11 +270,7 @@ footer {
     'nav footer footer footer';
     grid-template-columns: repeat(4, 1fr);
     }
-    section.home {
-    h1 {
-        font-size: max(300%)
-     }
-    }
+
     .about {
     padding-top: 0;
     }
@@ -310,9 +309,6 @@ footer {
     section.home {
         padding-top: 0;
         padding: 0 12%;
-        h1 {
-        font-size: max(250%)
-        }
     }
     .about {
         padding-left: 0;
