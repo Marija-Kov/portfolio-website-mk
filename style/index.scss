@@ -37,7 +37,7 @@ h1 {
     font-size: clamp(45px, 5vw, 60px);
 }
 h2 {
-    font-size: clamp(24px, 3vw, 36px)
+    font-size: clamp(24px, 4vw, 36px)
 }
 .container {
     display: grid;
@@ -182,7 +182,7 @@ nav {
 }
 
 
-//actual information:
+//main information:
 
 section.home {
     grid-area: hello;
@@ -229,6 +229,9 @@ section.home {
     grid-area: contact;
     height: 70vh;
 }
+.contact > h2 {
+    padding-left: 50px;
+}
 .contact > p {
     font-size: clamp(16px, 3vw, 20px);
 }
@@ -247,6 +250,78 @@ footer {
   }  
 }
 
+// contact form:
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+form {
+    width: clamp(300px, 100%, 600px);
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 3em;
+    //background: rgba(255, 192, 203, 0.185);
+    
+}
+
+.form-element {
+    background: transparent;
+    font-size: clamp(16px, 3vw, 20px);
+    color: rgb(77, 77, 77);
+    border: none;
+    border-bottom: solid 1px rgb(77, 77, 77);
+    height: 28px;
+    padding: 5px;
+    &:focus {
+        background: none;
+        border: none;
+     &::placeholder {
+        color: transparent;   
+    }
+    } 
+    &::placeholder {
+        color:rgb(77, 77, 77);
+    }
+}
+
+input[id=message] {
+    height: 20vh;
+    border: solid 1px rgb(77, 77, 77); 
+    border-radius: 18px;
+    
+}
+
+label {
+    font-family: hiragino-sans, Arial, Helvetica, sans-serif;
+    font-size: clamp(16px, 3vw, 20px);
+}
+button[type=submit] {
+    background: rgb(49, 49, 49);
+    color:  rgb(240, 240, 240);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    letter-spacing: 0.75px;
+    font-size: clamp(16px, 3vw, 22px);
+    font-family: basis33;
+    width: 100px;
+    transition: 0.3s;
+    &:hover {
+        color: rgb(37, 37, 37);
+        background: rgb(190, 190, 190);
+    }
+}
+.social-media {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
 
 @media screen and (max-width: 1024px) {
@@ -274,6 +349,9 @@ footer {
     .about {
     padding-top: 0;
     }
+    .contact-container {
+    flex-direction: column;
+}
     
 
 }
@@ -284,6 +362,7 @@ footer {
    display: flex;
    flex-direction: column;
     }
+
     nav {
     z-index: 66;
     display: none;
@@ -315,10 +394,14 @@ footer {
         padding: 0 12%;
         margin: 0 auto;
     }
-    .contact {
-        padding: 0 10%;
-    }
     
+    form {
+        align-items: center;
+    }
+
+    .form-element {
+        width: 100%;
+    }
 
     #ham {
         z-index: 77;

@@ -35,7 +35,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(24px, 4vw, 36px);
 }
 
 .container {
@@ -271,6 +271,10 @@ section.home {
   height: 70vh;
 }
 
+.contact > h2 {
+  padding-left: 50px;
+}
+
 .contact > p {
   font-size: clamp(16px, 3vw, 20px);
 }
@@ -307,6 +311,120 @@ footer .attribution {
   margin: 0 auto;
 }
 
+.contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+form {
+  width: clamp(300px, 100%, 600px);
+  z-index: 60;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+  padding: 3em;
+}
+
+.form-element {
+  background: transparent;
+  font-size: clamp(16px, 3vw, 20px);
+  color: #4d4d4d;
+  border: none;
+  border-bottom: solid 1px #4d4d4d;
+  height: 28px;
+  padding: 5px;
+}
+
+.form-element:focus {
+  background: none;
+  border: none;
+}
+
+.form-element:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-element:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-element:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-element:focus::placeholder {
+  color: transparent;
+}
+
+.form-element::-webkit-input-placeholder {
+  color: #4d4d4d;
+}
+
+.form-element:-ms-input-placeholder {
+  color: #4d4d4d;
+}
+
+.form-element::-ms-input-placeholder {
+  color: #4d4d4d;
+}
+
+.form-element::placeholder {
+  color: #4d4d4d;
+}
+
+input[id=message] {
+  height: 20vh;
+  border: solid 1px #4d4d4d;
+  border-radius: 18px;
+}
+
+label {
+  font-family: hiragino-sans, Arial, Helvetica, sans-serif;
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+button[type=submit] {
+  background: #313131;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  letter-spacing: 0.75px;
+  font-size: clamp(16px, 3vw, 22px);
+  font-family: basis33;
+  width: 100px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button[type=submit]:hover {
+  color: #252525;
+  background: #bebebe;
+}
+
+.social-media {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
         grid-template-areas: 'nav header header header ' 'nav hello hello aside' 'nav hello hello aside' 'nav hello hello aside' 'nav about about aside' 'nav about about aside' 'nav about about aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav contact contact aside' 'nav contact contact aside' 'nav footer footer footer' 'nav footer footer footer';
@@ -315,6 +433,12 @@ footer .attribution {
   }
   .about {
     padding-top: 0;
+  }
+  .contact-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -359,8 +483,13 @@ footer .attribution {
     padding: 0 12%;
     margin: 0 auto;
   }
-  .contact {
-    padding: 0 10%;
+  form {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .form-element {
+    width: 100%;
   }
   #ham {
     z-index: 77;
