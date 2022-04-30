@@ -250,7 +250,8 @@ footer {
   }  
 }
 
-// contact form:
+// ***** contact form: ******
+
 .contact-container {
     display: flex;
     //flex-direction: column;
@@ -270,7 +271,9 @@ form {
 }
 
 .form-element {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.007);
+    
+    
     font-size: clamp(16px, 3vw, 20px);
     color: rgb(77, 77, 77);
     border: none;
@@ -289,7 +292,7 @@ form {
     }
 }
 
-input[id=message] {
+textarea[id=message] {
     height: 20vh;
     border: solid 1px rgb(77, 77, 77); 
     border-radius: 18px;
@@ -320,10 +323,23 @@ button[type=submit] {
 .social-media {
     width: clamp(300px, 100%, 600px);
     display: flex;
+    gap: 10%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
 
+#github,
+#linkedin,
+#instagram {
+    fill: rgb(77,77,77);
+    width: 100%;
+}
+a > #github,
+a > #linkedin,
+a > #instagram {
+    width: clamp(30px, 4vw, 40px);
+    aspect-ratio: 1;
+}
 
 @media screen and (max-width: 1024px) {
 
