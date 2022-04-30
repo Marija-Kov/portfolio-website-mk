@@ -253,7 +253,7 @@ footer {
 // contact form:
 .contact-container {
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
     justify-content: space-between;
     
 }
@@ -318,8 +318,9 @@ button[type=submit] {
     }
 }
 .social-media {
-    width: 100%;
+    width: clamp(300px, 100%, 600px);
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 
