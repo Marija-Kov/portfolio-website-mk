@@ -333,6 +333,10 @@ button[type=submit] {
 #instagram {
     fill: rgb(77,77,77);
     width: 100%;
+    transition: 0.2s;
+    &:hover {
+        fill:rgb(37, 37, 37);
+    }
 }
 a > #github,
 a > #linkedin,
