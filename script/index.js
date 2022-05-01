@@ -2,7 +2,6 @@ const [red, green, blue, opacity] = [170, 227, 245, 0.9];
 const [rojo, verde, azul, opacidad] = [120, 209, 135, 0.1];
 
 let container = document.querySelector('.container');
-let logo = document.querySelector("#logo");
 let hello = document.querySelector('section.home');
 let navLinks = document.querySelectorAll('.nav-link');
 let about = document.querySelector(".about");
@@ -17,12 +16,9 @@ let ham = document.querySelector('#ham');
 let nav = document.querySelector('nav');
 let close = document.querySelector('#close');
 
-//. work parallax variables
-let workTop = document.querySelector('.work-top');
-let workBase = document.querySelector(".work-base");
 
 
-//navigation // scroll
+//NAVIGATE ON SCROLL / SCROLL ON NAV LINK CLICK:
 
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -53,7 +49,8 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section)
 })
-//hamburger menu:
+
+//HAMBURGER MENU:
 
 ham.addEventListener('click', () => {
     nav.style = "display: block";
@@ -63,7 +60,8 @@ ham.addEventListener('click', () => {
      ham.style = "display: block";   
     })
 })
-//draggable guide lines:
+
+//DRAGGABLE GUIDE LINES:
 
 function dragGuideX(e) {
    guideX.style.top = `${e.pageY}px`; 
@@ -89,7 +87,7 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", dragGuideY);
 });
 
-//move guide origin to cursor position on guide:
+//MOVE GUIDE ORIGIN TO CURSOR POSITION ON THE GUIDE:
 
 function moveGuideXOrigin(e) {
     guideXOrigin.style.left = `${e.pageX}px`;
@@ -114,7 +112,7 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideYOrigin);
 });
 
-//randomize starting position of guides and their origins
+//RANDOMIZE STARTING POSITION OF GUIDES/ORIGINS
 
 function randomGuideAndOriginPos(){
     guideX.style.top = `${Math.random() * 600}px`;
@@ -139,7 +137,7 @@ function intersect(){
 
 
 
-//change background colour on scroll:
+//CHANGE BACKGROUND COLOUR ON SCROLL:
 
 window.addEventListener('scroll', () => {
 let y = 1 + (window.scrollY || window.pageYOffset) / 150;
@@ -155,25 +153,28 @@ window.addEventListener("scroll", () => {
   document.body.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${a})`;
 });
 
-//fade elements on scroll:
+//FADE ELEMENTS ON SCROLL:
 
 window.addEventListener('scroll', () => {
    let y = (window.scrollY || window.pageYOffset) / 20;
    about.style.opacity = 0.05 * y;
 })
 
-//parallax .work
+//PARALLAX .work
 
 window.addEventListener('scroll', ()=> {
+  let workBase = document.querySelector(".work-base");
   let rate = ((window.scrollY || window.pageYOffset) * -0.5);
   workBase.style.transform = `translate3d(0px, ${rate}px, 0px)`;
 })
 
-//remove default textarea content on focus
-function clearText(){
-  let textarea = document.querySelector('textarea');
-  textarea.addEventListener('click', () => {
-    if(textarea.innerHTML == 'Tell me about your project ideas.')
-     textarea.value = null;
-  })
-}
+// FORM VALIDATION
+
+
+
+
+
+
+
+
+

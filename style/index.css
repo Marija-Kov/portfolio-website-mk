@@ -448,6 +448,20 @@ a > #instagram {
   aspect-ratio: 1;
 }
 
+#errorMsg {
+  position: absolute;
+  visibility: hidden;
+  top: 2620px;
+  font-size: clamp(16px, 3vw, 20px);
+  width: clamp(250px, 80%, 350px);
+  color: #f1d7ff;
+  background: #252525;
+  border-radius: 10px;
+  padding: 0 10px 5px 10px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
         grid-template-areas: 'nav header header header ' 'nav hello hello aside' 'nav hello hello aside' 'nav hello hello aside' 'nav about about aside' 'nav about about aside' 'nav about about aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav work work aside' 'nav contact contact aside' 'nav contact contact aside' 'nav footer footer footer' 'nav footer footer footer';
