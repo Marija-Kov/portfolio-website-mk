@@ -168,3 +168,12 @@ window.addEventListener('scroll', ()=> {
   let rate = ((window.scrollY || window.pageYOffset) * -0.5);
   workBase.style.transform = `translate3d(0px, ${rate}px, 0px)`;
 })
+
+//remove default textarea content on focus
+function clearText(){
+  let textarea = document.querySelector('textarea');
+  textarea.addEventListener('click', () => {
+    if(textarea.innerHTML == 'Tell me about your project ideas.')
+     textarea.value = null;
+  })
+}
