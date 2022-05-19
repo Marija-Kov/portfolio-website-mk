@@ -168,7 +168,7 @@ window.addEventListener('scroll', ()=> {
   workBase.style.transform = `translate3d(0px, ${rate}px, 0px)`;
 })
 
-// FORM VALIDATION
+
 
 
 
