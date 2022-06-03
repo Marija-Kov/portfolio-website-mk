@@ -31,11 +31,12 @@ h1, h2 {
 }
 
 h1 {
-  font-size: clamp(45px, 5vw, 60px);
+  font-size: clamp(36px, 5vw, 60px);
+  max-width: 700px;
 }
 
 h2 {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(22px, 4vw, 36px);
 }
 
 .container {
@@ -67,7 +68,7 @@ nav {
   padding-left: 35%;
   height: 100vh;
   min-width: 180px;
-  border-right: solid 1px #f0f0f0;
+  border-right: solid 1px rgba(240, 240, 240, 0.8);
 }
 
 nav ul {
@@ -89,7 +90,7 @@ nav ul li .nav-link {
   text-decoration: none;
   text-transform: uppercase;
   font-family: barlow-condensed-light;
-  font-size: 1.1em;
+  font-size: clamp(16px, 1.5vw, 18px);
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -217,7 +218,9 @@ section.home {
 }
 
 .about > p {
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(14px, 3vw, 20px);
+  max-width: 680px;
+  padding-top: 3%;
 }
 
 .work {
@@ -288,6 +291,7 @@ aside {
 }
 
 footer {
+  border: solid 1px rgba(255, 255, 255, 0.212);
   -ms-grid-row: 14;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -307,6 +311,7 @@ footer {
 
 footer .attribution {
   display: inline-block;
+  font-size: clamp(12px, 3vw, 16px);
   position: relative;
   margin: 0 auto;
 }
@@ -336,7 +341,7 @@ form {
 
 .form-element {
   background: rgba(255, 255, 255, 0.007);
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(16px, 3vw, 18px);
   color: #4d4d4d;
   border: none;
   border-bottom: solid 1px #4d4d4d;
@@ -400,7 +405,7 @@ button[type=submit] {
   cursor: pointer;
   padding: 5px 10px;
   letter-spacing: 0.75px;
-  font-size: clamp(16px, 3vw, 22px);
+  font-size: clamp(14px, 3vw, 18px);
   font-family: basis33;
   width: 100px;
   -webkit-transition: 0.3s;
@@ -417,13 +422,20 @@ button[type=submit]:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 10%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  gap: 7%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.social-media a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 
 #github,
@@ -433,19 +445,14 @@ button[type=submit]:hover {
   width: 100%;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  width: clamp(28px, 4vw, 30px);
+  aspect-ratio: 1;
 }
 
 #github:hover,
 #linkedin:hover,
 #instagram:hover {
-  fill: #252525;
-}
-
-a > #github,
-a > #linkedin,
-a > #instagram {
-  width: clamp(30px, 4vw, 40px);
-  aspect-ratio: 1;
+  fill: #cfcfcf;
 }
 
 #errorMsg {
@@ -476,6 +483,12 @@ a > #instagram {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .social-media {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 

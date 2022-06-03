@@ -75,6 +75,13 @@ guideX.addEventListener('mouseup', () => {
    window.removeEventListener('mousemove', dragGuideX);
 });
 
+guideX.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", dragGuideX);
+});
+guideX.addEventListener("touchup", () => {
+  window.removeEventListener("touchmove", dragGuideX);
+});
+
 function dragGuideY(e) {
   guideY.style.left = `${e.pageX}px`;
   guideY.style.top = "0px";
@@ -87,6 +94,12 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", dragGuideY);
 });
 
+guideY.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", dragGuideY);
+});
+guideY.addEventListener("touchend", () => {
+  window.removeEventListener("touchmove", dragGuideY);
+});
 //MOVE GUIDE ORIGIN TO CURSOR POSITION ON THE GUIDE:
 
 function moveGuideXOrigin(e) {
@@ -98,6 +111,13 @@ guideX.addEventListener('mousedown', () => {
 });
 guideX.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideXOrigin);
+});
+
+guideX.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", moveGuideXOrigin);
+});
+guideX.addEventListener("touchend", () => {
+  window.removeEventListener("touchmove", moveGuideXOrigin);
 });
 
 function moveGuideYOrigin(e) {
@@ -112,12 +132,21 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideYOrigin);
 });
 
+guideY.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", moveGuideYOrigin);
+});
+guideY.addEventListener("touchend", () => {
+  window.removeEventListener("touchmove", moveGuideYOrigin);
+});
+
+
+
 //RANDOMIZE STARTING POSITION OF GUIDES/ORIGINS
 
 function randomGuideAndOriginPos(){
     guideX.style.top = `${Math.random() * 600}px`;
-    guideY.style.left = `${Math.random() * window.innerWidth}px`;
-    guideXOrigin.style.left = `${Math.random() * window.innerWidth}px`;
+    guideY.style.left = `${Math.random() * window.innerWidth/2}px`;
+    guideXOrigin.style.left = `${Math.random() * window.innerWidth/2}px`;
     guideYOrigin.style.top = `${Math.random() * 600}px`;
 }
 
