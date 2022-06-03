@@ -214,7 +214,7 @@ section.home {
   grid-area: about;
   height: 100vh;
   padding-left: 5%;
-  padding-top: 100px;
+  padding-top: 40vh;
 }
 
 .about > p {
@@ -301,12 +301,10 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-bottom: 1vh;
 }
 
 footer .attribution {
@@ -328,6 +326,9 @@ footer .attribution {
 form {
   width: clamp(300px, 100%, 600px);
   z-index: 60;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,6 +419,9 @@ button[type=submit]:hover {
 }
 
 .social-media {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   width: clamp(300px, 100%, 600px);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -475,9 +479,9 @@ button[type=submit]:hover {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
-  .about {
-    padding-top: 0;
-  }
+}
+
+@media screen and (max-width: 768px) {
   .contact-container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -490,9 +494,6 @@ button[type=submit]:hover {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-}
-
-@media screen and (max-width: 768px) {
   .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -529,8 +530,8 @@ button[type=submit]:hover {
     padding: 0 12%;
   }
   .about {
-    padding-left: 0;
-    padding: 0 12%;
+    padding-left: 12%;
+    padding-right: 12%;
     margin: 0 auto;
   }
   form {
@@ -572,6 +573,53 @@ button[type=submit]:hover {
   }
   aside {
     display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+  h1 {
+    font-size: 9vh;
+  }
+  section.home {
+    max-width: 600px;
+  }
+  h2 {
+    font-size: 7vh;
+  }
+  .about,
+  .work {
+    height: 200vh;
+  }
+  .about {
+    padding-top: 90vh;
+  }
+  .contact {
+    padding-top: 30vh;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 150vh;
+  }
+  form {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .contact-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .social-media {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  footer {
+    height: 40vh;
   }
 }
 /*# sourceMappingURL=index.css.map */
