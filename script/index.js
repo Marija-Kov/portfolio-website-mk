@@ -78,7 +78,7 @@ guideX.addEventListener('mouseup', () => {
 guideX.addEventListener("touchstart", () => {
   window.addEventListener("touchmove", dragGuideX);
 });
-guideX.addEventListener("touchup", () => {
+guideX.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", dragGuideX);
 });
 
