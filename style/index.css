@@ -124,74 +124,63 @@ nav ul li [aria-current]::before {
   display: none;
 }
 
+.guideX,
 .guideY {
   z-index: 55;
   position: absolute;
-  display: inline-block;
-  height: 400vh;
+  background: blue;
   cursor: -webkit-grab;
   cursor: grab;
-  background: blue;
-  width: 0.5px;
-  top: 0;
-  left: 600px;
-  -webkit-transform: translate(50%, 0%);
-          transform: translate(50%, 0%);
-  overflow: hidden;
 }
 
+.guideX:hover,
 .guideY:hover {
   background: red;
 }
 
+.guideX:active,
 .guideY:active {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
-.guideY .guideY-origin {
+.guideY-origin,
+.guideX-origin {
   position: relative;
-  top: 400px;
   display: inline-block;
-  width: 7px;
+  height: 7px;
   aspect-ratio: 1;
   background: #c04646;
   border-radius: 100%;
+}
+
+.guideY {
+  height: 400vh;
+  width: 0.5px;
+  top: 0;
+  left: 600px;
+  -webkit-transform: translate(50%, 0%);
+          transform: translate(50%, 0%);
+}
+
+.guideY .guideY-origin {
+  top: 400px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
 .guideX {
-  z-index: 55;
-  position: absolute;
   width: 100vw;
-  cursor: -webkit-grab;
-  cursor: grab;
-  background: blue;
   height: 0.5px;
   top: 265px;
   -webkit-transform: translate(0%, 50%);
           transform: translate(0%, 50%);
 }
 
-.guideX:hover {
-  background: red;
-}
-
-.guideX:active {
-  cursor: -webkit-grabbing;
-  cursor: grabbing;
-}
-
 .guideX .guideX-origin {
   position: relative;
   top: 0;
-  display: inline-block;
   left: 400px;
-  height: 7px;
-  aspect-ratio: 1;
-  background: #c04646;
-  border-radius: 100%;
   -webkit-transform: translate(-50%, -100%);
           transform: translate(-50%, -100%);
 }
@@ -292,7 +281,6 @@ aside {
 }
 
 footer {
-  border: solid 1px rgba(255, 255, 255, 0.212);
   -ms-grid-row: 14;
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
@@ -458,20 +446,6 @@ button[type=submit]:hover {
 #linkedin:hover,
 #instagram:hover {
   fill: #cfcfcf;
-}
-
-#errorMsg {
-  position: absolute;
-  visibility: hidden;
-  top: 2620px;
-  font-size: clamp(16px, 3vw, 20px);
-  width: clamp(250px, 80%, 350px);
-  color: #f1d7ff;
-  background: #252525;
-  border-radius: 10px;
-  padding: 0 10px 5px 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 @media screen and (max-width: 1024px) {
