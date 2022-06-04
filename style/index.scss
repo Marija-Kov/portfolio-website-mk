@@ -125,7 +125,7 @@ nav {
 // symbols, ornaments, interactive elements: 
 
 .guideY {
-   z-index: 55;
+    z-index: 55;
     position: absolute;
     display: inline-block;
     height: 400vh;
@@ -135,7 +135,7 @@ nav {
     top: 0;
     left: 600px;
     transform: translate(50%, 0%);
-
+    overflow: hidden;
     &:hover {
         background: red;
     }
@@ -416,7 +416,7 @@ button[type=submit] {
     display: none;
     padding-top: 70px;
     position: fixed;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
     background:rgb(240, 240, 240);
    }
@@ -481,9 +481,13 @@ button[type=submit] {
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {
 
+.container {
+    padding-left: 5vw;
+}
 nav{
    height: 100vh;
    width: 30vw;
+   max-width: 200px;
    right: 0;
    padding: 15% 5%;
 }   
@@ -509,11 +513,10 @@ h2 {
     flex-direction: row;
     height: 150vh;
 }
-form {
-    flex: 1;
-}
+
 .contact-container {
     flex-direction: row;
+    min-width: 300px;
     max-width: 560px;
 }
 .social-media {
@@ -524,7 +527,7 @@ form {
 footer {
     height: 40vh;
 }
-// guideY{
-//     height: 1000vh;
-// }
+.guideY {
+    height: 690vh;
+}
 }

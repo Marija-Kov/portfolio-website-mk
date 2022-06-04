@@ -1,5 +1,5 @@
 
-Making my artist/dev portfolio website from scratch.
+Making my web developer portfolio website from scratch.
 
 Work in progress.
 

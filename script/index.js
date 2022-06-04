@@ -75,18 +75,12 @@ guideX.addEventListener('mouseup', () => {
    window.removeEventListener('mousemove', dragGuideX);
 });
 
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-){
-  guideX.addEventListener("touchstart", () => {
-    window.addEventListener("touchmove", dragGuideX);
-  });
+guideX.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", dragGuideX);
+});
 guideX.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", dragGuideX);
 });
-}
 
 function dragGuideY(e) {
   guideY.style.left = `${e.pageX}px`;
@@ -100,18 +94,12 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", dragGuideY);
 });
 
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-){
-  guideY.addEventListener("touchstart", () => {
-    window.addEventListener("touchmove", dragGuideY);
-  });
+guideY.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", dragGuideY);
+});
 guideY.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", dragGuideY);
 });
-}
 //MOVE GUIDE ORIGIN TO CURSOR POSITION ON THE GUIDE:
 
 function moveGuideXOrigin(e) {
@@ -125,18 +113,12 @@ guideX.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideXOrigin);
 });
 
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-){
-  guideX.addEventListener("touchstart", () => {
-    window.addEventListener("touchmove", moveGuideXOrigin);
-  });
+guideX.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", moveGuideXOrigin);
+});
 guideX.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", moveGuideXOrigin);
 });
-}
 
 function moveGuideYOrigin(e) {
   guideYOrigin.style.top = `${e.pageY}px`;
@@ -150,18 +132,13 @@ guideY.addEventListener("mouseup", () => {
   window.removeEventListener("mousemove", moveGuideYOrigin);
 });
 
-if (
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  )
-){
-  guideY.addEventListener("touchstart", () => {
-    window.addEventListener("touchmove", moveGuideYOrigin);
-  });
+guideY.addEventListener("touchstart", () => {
+  window.addEventListener("touchmove", moveGuideYOrigin);
+});
 guideY.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", moveGuideYOrigin);
 });
-}
+
 
 
 //RANDOMIZE STARTING POSITION OF GUIDES/ORIGINS

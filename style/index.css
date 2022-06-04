@@ -137,6 +137,7 @@ nav ul li [aria-current]::before {
   left: 600px;
   -webkit-transform: translate(50%, 0%);
           transform: translate(50%, 0%);
+  overflow: hidden;
 }
 
 .guideY:hover {
@@ -508,7 +509,7 @@ button[type=submit]:hover {
     display: none;
     padding-top: 70px;
     position: fixed;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
     background: #f0f0f0;
   }
@@ -577,9 +578,13 @@ button[type=submit]:hover {
 }
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {
+  .container {
+    padding-left: 5vw;
+  }
   nav {
     height: 100vh;
     width: 30vw;
+    max-width: 200px;
     right: 0;
     padding: 15% 5%;
   }
@@ -607,16 +612,12 @@ button[type=submit]:hover {
             flex-direction: row;
     height: 150vh;
   }
-  form {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-  }
   .contact-container {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    min-width: 300px;
     max-width: 560px;
   }
   .social-media {
@@ -628,6 +629,9 @@ button[type=submit]:hover {
   }
   footer {
     height: 40vh;
+  }
+  .guideY {
+    height: 690vh;
   }
 }
 /*# sourceMappingURL=index.css.map */
