@@ -66,6 +66,7 @@ ham.addEventListener('click', () => {
 function dragGuideX(e) {
    guideX.style.top = `${e.pageY}px`; 
    guideX.style.left = "0px";
+   console.log('move')
 }
 
 guideX.addEventListener('mousedown', () => {
@@ -76,15 +77,18 @@ guideX.addEventListener('mouseup', () => {
 });
 
 guideX.addEventListener("touchstart", () => {
-  window.addEventListener("touchmove", dragGuideX);
+  guideX.addEventListener("touchmove", dragGuideX);
+  console.log('start')
 });
 guideX.addEventListener("touchend", () => {
-  window.removeEventListener("touchmove", dragGuideX);
+  guideX.removeEventListener("touchmove", dragGuideX);
+console.log("end");
 });
 
 function dragGuideY(e) {
   guideY.style.left = `${e.pageX}px`;
   guideY.style.top = "0px";
+  console.log("move");
 }
 
 guideY.addEventListener("mousedown", () => {
@@ -96,9 +100,11 @@ guideY.addEventListener("mouseup", () => {
 
 guideY.addEventListener("touchstart", () => {
   window.addEventListener("touchmove", dragGuideY);
+  console.log("start");
 });
 guideY.addEventListener("touchend", () => {
   window.removeEventListener("touchmove", dragGuideY);
+  console.log("end");
 });
 //MOVE GUIDE ORIGIN TO CURSOR POSITION ON THE GUIDE:
 
