@@ -1,0 +1,20 @@
+footer {
+    grid-area: footer;
+    height: 30vh;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1vh;
+
+    .attribution {
+        display: inline-block;
+        font-size: clamp(12px, 3vw, 16px);
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+  footer {
+      height: 40vh;
+  }
+}
