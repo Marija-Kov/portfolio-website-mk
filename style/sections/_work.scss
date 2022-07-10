@@ -1,0 +1,35 @@
+@use '../mixins';
+
+.work {
+    grid-area: work;
+    height: 100vh;
+    transform-style: "preserve-3d";
+
+    h2 {
+        display: none;
+        font-family: hiragino-sans;
+        padding-left: 55px;
+    }
+
+    .work-top,
+    .work-base {
+        @include mixins.center-aligned;
+        inset: 0;
+        font-size: clamp(60px, 8vw, 100px);
+        height: 100%;
+    }
+
+    .work-top {
+        transform: translateZ(200px);
+    }
+
+    .work-base {
+        background: rgba(255, 192, 203, 0.173);
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+  .work {
+    height: 200vh;
+  }
+}
