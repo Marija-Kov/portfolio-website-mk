@@ -1,0 +1,58 @@
+.guideX,
+.guideY {
+    z-index: 55;
+    position: absolute;
+    background: blue;
+    cursor: grab;
+
+    &:hover {
+        background: red;
+    }
+
+    &:active {
+        cursor: grabbing;
+    }
+}
+
+.guideY-origin,
+.guideX-origin {
+    position: relative;
+    display: inline-block;
+    height: 7px;
+    aspect-ratio: 1;
+    background: rgb(192, 70, 70);
+    border-radius: 100%;
+}
+
+.guideY {
+    height: 400vh;
+    width: 0.5px;
+    top: 0;
+    left: 600px;
+    transform: translate(50%, 0%);
+
+    .guideY-origin {
+        top: 400px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.guideX {
+    width: 100vw;
+    height: 0.5px;
+    top: 265px;
+    transform: translate(0%, 50%);
+
+    .guideX-origin {
+        position: relative;
+        top: 0;
+        left: 400px;
+        transform: translate(-50%, -100%);
+    }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+ .guideY {
+    height: 690vh;
+ }
+}
