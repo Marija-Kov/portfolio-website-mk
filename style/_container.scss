@@ -1,0 +1,70 @@
+.container {
+    display: grid;
+    background-color: rgba(170, 247, 235, 0.94);
+    grid-template-areas:
+        'nav header header header header header'
+        'nav hello hello hello hello aside'
+        'nav hello hello hello hello aside'
+        'nav hello hello hello hello aside'
+        'nav about about about about aside'
+        'nav about about about about aside'
+        'nav about about about about aside'
+        'nav work work work work aside'
+        'nav work work work work aside'
+        'nav work work work work aside'
+        'nav work work work work aside'
+        'nav contact contact contact contact aside'
+        'nav contact contact contact contact aside'
+        'nav footer footer footer footer footer'
+        'nav footer footer footer footer footer';
+    grid-template-columns: repeat(6, 1fr);
+
+}
+
+aside {
+    grid-area: aside;
+    height: 75vh;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      display: flex;
+      flex-direction: column;
+  }
+  aside {
+      display: none;
+  }
+
+}
+    
+
+@media screen and (max-width: 1024px) {
+
+    .container {
+        grid-template-areas:
+            'nav header header header '
+            'nav hello hello aside'
+            'nav hello hello aside'
+            'nav hello hello aside'
+            'nav about about aside'
+            'nav about about aside'
+            'nav about about aside'
+            'nav work work aside'
+            'nav work work aside'
+            'nav work work aside'
+            'nav work work aside'
+            'nav contact contact aside'
+            'nav contact contact aside'
+            'nav footer footer footer'
+            'nav footer footer footer';
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+
+    .container {
+        padding-left: 5vw;
+    }
+}   
