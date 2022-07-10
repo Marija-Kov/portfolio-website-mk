@@ -1,0 +1,25 @@
+header {
+    //header was assigned class "home" for the purpose of scrollIntoView() method
+    grid-area: header;
+    height: 20vh;
+}
+
+section.home {
+    grid-area: hello;
+    padding-top: 10%;
+    padding-left: 3%;
+    height: 80vh;
+}
+
+@media screen and (max-width: 768px) {
+   section.home {
+       padding-top: 0;
+       padding: 0 12%;
+   }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 500px) {
+  section.home {
+    max-width: 600px;
+  }
+}
