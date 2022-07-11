@@ -14,53 +14,51 @@ function dragGuideY(e) {
 
 function moveGuideXOrigin(e) {
   guideXOrigin.style.left = `${e.pageX}px`;
-  intersect();
 }
 
 function moveGuideYOrigin(e) {
   guideYOrigin.style.top = `${e.pageY}px`;
-  intersect();
 }
 
-function intersect() {
-  if (
-    guideXOrigin.style.left === guideY.style.left ||
-    guideYOrigin.style.top === guideX.style.top ||
-    (guideXOrigin.style.left === guideYOrigin.style.left &&
-      guideYOrigin.style.top === guideXOrigin.style.top)
-  ) {
-    console.log("intersected");
-  }
+// function intersect() {
+//   if (
+//     guideXOrigin.style.left === guideY.style.left ||
+//     guideYOrigin.style.top === guideX.style.top ||
+//     (guideXOrigin.style.left === guideYOrigin.style.left &&
+//       guideYOrigin.style.top === guideXOrigin.style.top)
+//   ) {
+//     console.log("intersected");
+//   }
+// }
+
+export function guidesInit() {
+  guideX.addEventListener("pointerdown", () => {
+  guideX.addEventListener("pointermove", dragGuideX);
+});
+guideX.addEventListener("pointerup", () => {
+  guideX.removeEventListener("pointermove", dragGuideX);
+});
+
+guideY.addEventListener("pointerdown", () => {
+  guideY.addEventListener("pointermove", dragGuideY);
+});
+guideY.addEventListener("pointerup", () => {
+  guideY.removeEventListener("pointermove", dragGuideY);
+});
 }
 
-export function guides() {
-  guideX.addEventListener("mousedown", () => {
-  window.addEventListener("mousemove", dragGuideX);
-});
-guideX.addEventListener("mouseup", () => {
-  window.removeEventListener("mousemove", dragGuideX);
-});
-
-guideY.addEventListener("mousedown", () => {
-  window.addEventListener("mousemove", dragGuideY);
-});
-guideY.addEventListener("mouseup", () => {
-  window.removeEventListener("mousemove", dragGuideY);
-});
-}
-
-export function origins() {
-  guideX.addEventListener("mousedown", () => {
-   window.addEventListener("mousemove", moveGuideXOrigin);
+export function originsInit() {
+  guideX.addEventListener("pointerdown", () => {
+   guideX.addEventListener("pointermove", moveGuideXOrigin);
   });
-  guideX.addEventListener("mouseup", () => {
-   window.removeEventListener("mousemove", moveGuideXOrigin);
+  guideX.addEventListener("pointerup", () => {
+   guideX.removeEventListener("pointermove", moveGuideXOrigin);
   });
- guideY.addEventListener("mousedown", () => {
-  window.addEventListener("mousemove", moveGuideYOrigin);
+ guideY.addEventListener("pointerdown", () => {
+  guideY.addEventListener("pointermove", moveGuideYOrigin);
   });
- guideY.addEventListener("mouseup", () => {
-  window.removeEventListener("mousemove", moveGuideYOrigin);
+ guideY.addEventListener("pointerup", () => {
+  guideY.removeEventListener("pointermove", moveGuideYOrigin);
   });
 }
 
