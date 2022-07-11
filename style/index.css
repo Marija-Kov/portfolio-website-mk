@@ -272,7 +272,7 @@ section.home {
   transform: translateZ(200px);
 }
 .work .work-base {
-  background: rgba(255, 192, 203, 0.173);
+  background: rgba(255, 192, 203, 0);
 }
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {
