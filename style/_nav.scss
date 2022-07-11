@@ -65,12 +65,21 @@ nav {
         position: fixed;
         height: 40vh;
         width: 100vw;
-        background: rgb(240, 240, 240);
+        background: rgba(240,240,240, 0.3);
+        border-bottom: solid 1px rgba(240, 240, 240, 0.8);
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
     }
 
     ul {
         gap: 50px;
     }
+nav{ul{li{
+ .nav-link {
+      font-size: 1.2em;
+  }   
+}}}
+  
 
     #close {
         display: inline-block;
