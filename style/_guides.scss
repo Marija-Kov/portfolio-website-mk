@@ -1,4 +1,11 @@
 .guideX,
+.guideY,
+.guideY-origin,
+.guideX-origin {
+    touch-action: none; 
+}
+
+.guideX,
 .guideY {
     z-index: 55;
     position: absolute;
@@ -26,7 +33,7 @@
 
 .guideY {
     height: 400vh;
-    width: 0.5px;
+    width: 1px;
     top: 0;
     left: 600px;
     transform: translate(50%, 0%);
@@ -39,7 +46,7 @@
 
 .guideX {
     width: 100vw;
-    height: 0.5px;
+    height: 1px;
     top: 265px;
     transform: translate(0%, 50%);
 
