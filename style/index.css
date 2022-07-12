@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap");
 @font-face {
   font-family: barlow-condensed-light;
   src: url("/fonts/barlowsemicondensed-light.otf");
@@ -155,11 +156,11 @@ nav ul li [aria-current]::before {
 }
 h1,
 h2 {
-  font-family: hiragino-sans, Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(36px, 5vw, 64px);
   max-width: 700px;
 }
 
@@ -169,10 +170,10 @@ h2 {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 42px;
+    font-size: 48px;
   }
   h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 @media screen and (max-width: 1024px) and (max-height: 500px) {
