@@ -1,15 +1,25 @@
 import { guideX, guideXOrigin, guideY, guideYOrigin } from './variables.js';
 
 function dragGuideX(e) {
-  guideX.style.top = `${e.pageY}px`;
   guideX.style.left = "0px";
-  console.log("move");
+  let maxH = guideY.offsetHeight;
+  if (e.pageY < maxH){
+   guideX.style.top = `${e.pageY}px`
+  }else{
+   guideX.style.top = `${e.maxH}px`
+  }
+  console.log(guideY.offsetHeight)
 }
 
 function dragGuideY(e) {
-  guideY.style.left = `${e.pageX}px`;
   guideY.style.top = "0px";
-  console.log("move");
+  let maxW = window.innerWidth;
+  if(e.pageX < maxW){
+   guideY.style.left = `${e.pageX}px`;  
+  } else {
+    guideY.style.left = `${maxW - 1}px`;
+  }
+  console.log(maxW);
 }
 
 function moveGuideXOrigin(e) {
@@ -33,17 +43,17 @@ function moveGuideYOrigin(e) {
 
 export function guidesInit() {
   guideX.addEventListener("pointerdown", () => {
-  guideX.addEventListener("pointermove", dragGuideX);
+  document.addEventListener("pointermove", dragGuideX);
 });
 guideX.addEventListener("pointerup", () => {
-  guideX.removeEventListener("pointermove", dragGuideX);
+  document.removeEventListener("pointermove", dragGuideX);
 });
 
 guideY.addEventListener("pointerdown", () => {
-  guideY.addEventListener("pointermove", dragGuideY);
+  document.addEventListener("pointermove", dragGuideY);
 });
 guideY.addEventListener("pointerup", () => {
-  guideY.removeEventListener("pointermove", dragGuideY);
+  document.removeEventListener("pointermove", dragGuideY);
 });
 }
 
