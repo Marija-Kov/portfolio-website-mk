@@ -1,15 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;0,800;1,600;1,700;1,800&display=swap");
-@font-face {
-  font-family: barlow-condensed-light;
-  src: url("/fonts/barlowsemicondensed-light.otf");
-}
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Montserrat:ital,wght@0,800;1,700;1,800&display=swap");
 @font-face {
   font-family: basis33;
   src: url("/fonts/basis33.ttf");
-}
-@font-face {
-  font-family: hiragino-sans;
-  src: url("/fonts/HiraginoSans.ttc");
 }
 .container {
   display: grid;
@@ -65,7 +57,7 @@ nav ul li {
 nav ul li .nav-link {
   text-decoration: none;
   text-transform: uppercase;
-  font-family: barlow-condensed-light;
+  font-family: "Barlow Semi Condensed", sans-serif;
   font-size: clamp(16px, 1.5vw, 18px);
   cursor: pointer;
   transition: 0.3s;
