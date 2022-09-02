@@ -30,16 +30,6 @@ function moveGuideYOrigin(e) {
   guideYOrigin.style.top = `${e.pageY}px`;
 }
 
-// function intersect() {
-//   if (
-//     guideXOrigin.style.left === guideY.style.left ||
-//     guideYOrigin.style.top === guideX.style.top ||
-//     (guideXOrigin.style.left === guideYOrigin.style.left &&
-//       guideYOrigin.style.top === guideXOrigin.style.top)
-//   ) {
-//     console.log("intersected");
-//   }
-// }
 
 export function guidesInit() {
   guideX.addEventListener("pointerdown", () => {
@@ -79,6 +69,16 @@ export function randomGuideAndOriginPos() {
   guideYOrigin.style.top = `${Math.random() * 600}px`;
 }
 
+// function intersect() {
+//   if (
+//     guideXOrigin.style.left === guideY.style.left ||
+//     guideYOrigin.style.top === guideX.style.top ||
+//     (guideXOrigin.style.left === guideYOrigin.style.left &&
+//       guideYOrigin.style.top === guideXOrigin.style.top)
+//   ) {
+//     console.log("intersected");
+//   }
+// }
 
 
 

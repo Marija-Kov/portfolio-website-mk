@@ -2,15 +2,41 @@ footer {
     grid-area: footer;
     height: 30vh;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 1vh;
+    flex-direction: column;
+   justify-content: flex-end;
+    padding-bottom: 2vh;
 
     .attribution {
         display: inline-block;
         font-size: clamp(12px, 3vw, 16px);
-        position: relative;
+        //position: relative;
         margin: 0 auto;
     }
+}
+
+.social-media {
+    width: clamp(300px, 100%, 600px);
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+    margin: 0 auto;
+    margin-bottom: 5vh;
+
+}
+
+#github,
+#twitter,
+#linkedin,
+#instagram {
+    filter: opacity(0.5);
+    transition: 0.2s;
+    width: 30px;
+    &:hover {
+        filter: opacity(0.8);
+    }
+
+    width: clamp(28px, 4vw, 30px);
+    aspect-ratio: 1;
 }
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {

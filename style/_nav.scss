@@ -97,14 +97,14 @@ nav{ul{li{
          height: 60px;
          aspect-ratio: 1;
          border-radius: 100%;
-         border: solid 18px rgb(37, 37, 37);
+         border: solid 18px rgb(55,55,55);
          top: 20px;
          right: 20px;
          cursor: pointer;
          transition: 0.3s;
 
          &:hover {
-             border: solid 14px rgb(37, 37, 37);
+             border: solid 14px rgb(55,55,55);
 
              &::before {
                  @include mixins.center-aligned;

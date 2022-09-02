@@ -15,6 +15,7 @@
 .contact-container {
     display: flex;
     justify-content: space-between;
+    max-width: 600px;
 }
 
 form {
@@ -64,63 +65,27 @@ label {
 }
 
 button[type=submit] {
-    background: rgb(49, 49, 49);
-    color: rgb(240, 240, 240);
-    border: none;
+    background: transparent;
+    color: rgb(77,77,77);
+    border: solid 2px rgb(77,77,77);
     border-radius: 20px;
     cursor: pointer;
     padding: 5px 10px;
+    padding-top: 7px;
     letter-spacing: 0.75px;
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: clamp(16px, 4vw, 18px);
     font-family: basis33;
+    text-transform: uppercase;
     width: 100px;
     transition: 0.3s;
 
     &:hover {
-        color: rgb(37, 37, 37);
-        background: rgb(190, 190, 190);
+        color:white;
+        background: rgb(77,77,77);
     }
 }
 
-.social-media {
-    flex: 1;
-    width: clamp(300px, 100%, 600px);
-    display: flex;
-    gap: 7%;
-    flex-direction: column;
-    justify-content: center;
 
-    a {
-        width: max-content;
-    }
-}
-
-#github,
-#linkedin,
-#instagram {
-    fill: rgb(77, 77, 77);
-    width: 100%;
-    transition: 0.2s;
-
-    &:hover {
-        fill: rgb(207, 207, 207);
-    }
-
-    width: clamp(28px, 4vw, 30px);
-    aspect-ratio: 1;
-}
-
-@media screen and (max-width: 768px) {
-
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .social-media {
-        flex-direction: row;
-    }
-
-}
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {
 
@@ -136,11 +101,6 @@ button[type=submit] {
         max-width: 560px;
     }
 
-    .social-media {
-        flex-direction: column;
-        max-width: 100px;
-
-    }
 }
 
 @media screen and (max-width: 768px) {

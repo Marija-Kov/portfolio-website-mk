@@ -1,7 +1,6 @@
+# Web developer/designer portfolio - landing page
 
-Making my web developer portfolio website from scratch.
-
-Work in progress.
+- Using HTML, CSS/SASS, vanilla JavaScript.
 
 
 

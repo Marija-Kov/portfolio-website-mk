@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Montserrat:ital,wght@0,800;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@200;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @font-face {
   font-family: basis33;
   src: url("/fonts/basis33.ttf");
@@ -120,14 +121,14 @@ nav ul li [aria-current]::before {
     height: 60px;
     aspect-ratio: 1;
     border-radius: 100%;
-    border: solid 18px rgb(37, 37, 37);
+    border: solid 18px rgb(55, 55, 55);
     top: 20px;
     right: 20px;
     cursor: pointer;
     transition: 0.3s;
   }
   #ham:hover {
-    border: solid 14px rgb(37, 37, 37);
+    border: solid 14px rgb(55, 55, 55);
   }
   #ham:hover::before {
     display: flex;
@@ -149,6 +150,7 @@ nav ul li [aria-current]::before {
 h1,
 h2 {
   font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 h1 {
@@ -340,6 +342,7 @@ section.home {
 .contact-container {
   display: flex;
   justify-content: space-between;
+  max-width: 600px;
 }
 
 form {
@@ -396,60 +399,25 @@ label {
 }
 
 button[type=submit] {
-  background: rgb(49, 49, 49);
-  color: rgb(240, 240, 240);
-  border: none;
+  background: transparent;
+  color: rgb(77, 77, 77);
+  border: solid 2px rgb(77, 77, 77);
   border-radius: 20px;
   cursor: pointer;
   padding: 5px 10px;
+  padding-top: 7px;
   letter-spacing: 0.75px;
-  font-size: clamp(14px, 3vw, 18px);
+  font-size: clamp(16px, 4vw, 18px);
   font-family: basis33;
+  text-transform: uppercase;
   width: 100px;
   transition: 0.3s;
 }
 button[type=submit]:hover {
-  color: rgb(37, 37, 37);
-  background: rgb(190, 190, 190);
+  color: white;
+  background: rgb(77, 77, 77);
 }
 
-.social-media {
-  flex: 1;
-  width: clamp(300px, 100%, 600px);
-  display: flex;
-  gap: 7%;
-  flex-direction: column;
-  justify-content: center;
-}
-.social-media a {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-#github,
-#linkedin,
-#instagram {
-  fill: rgb(77, 77, 77);
-  width: 100%;
-  transition: 0.2s;
-  width: clamp(28px, 4vw, 30px);
-  aspect-ratio: 1;
-}
-#github:hover,
-#linkedin:hover,
-#instagram:hover {
-  fill: rgb(207, 207, 207);
-}
-
-@media screen and (max-width: 768px) {
-  .contact-container {
-    flex-direction: column;
-  }
-  .social-media {
-    flex-direction: row;
-  }
-}
 @media screen and (max-width: 1024px) and (max-height: 500px) {
   .contact {
     padding-top: 30vh;
@@ -460,10 +428,6 @@ button[type=submit]:hover {
     flex-direction: row;
     min-width: 300px;
     max-width: 560px;
-  }
-  .social-media {
-    flex-direction: column;
-    max-width: 100px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -478,14 +442,40 @@ footer {
   grid-area: footer;
   height: 30vh;
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 1vh;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 2vh;
 }
 footer .attribution {
   display: inline-block;
   font-size: clamp(12px, 3vw, 16px);
-  position: relative;
   margin: 0 auto;
+}
+
+.social-media {
+  width: clamp(300px, 100%, 600px);
+  display: flex;
+  justify-content: center;
+  gap: 7%;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+}
+
+#github,
+#twitter,
+#linkedin,
+#instagram {
+  filter: opacity(0.5);
+  transition: 0.2s;
+  width: 30px;
+  width: clamp(28px, 4vw, 30px);
+  aspect-ratio: 1;
+}
+#github:hover,
+#twitter:hover,
+#linkedin:hover,
+#instagram:hover {
+  filter: opacity(0.8);
 }
 
 @media screen and (max-width: 1024px) and (max-height: 500px) {
@@ -503,4 +493,8 @@ footer .attribution {
 
 body {
   width: 100vw;
+}
+
+aside {
+  font-size: 2vw;
 }/*# sourceMappingURL=index.css.map */
