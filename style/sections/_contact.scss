@@ -36,11 +36,11 @@ form {
     border-bottom: solid 1px rgb(77, 77, 77);
     height: 28px;
     padding: 5px;
-
+    
     &:focus {
-        background: none;
+        background: transparent;
         border: none;
-
+        outline: solid 2px rgb(77, 77, 77);
         &::placeholder {
             color: transparent;
         }
@@ -50,12 +50,22 @@ form {
         color: rgb(77, 77, 77);
     }
 
+    &::selection {
+        background: rgb(77, 77, 77);
+        color: white;
+    }
+    &::-moz-selection {
+        background: rgb(77, 77, 77);
+        color: white;
+    }
+
 }
 
 textarea[id=message] {
     height: 20vh;
     border: solid 1px rgb(77, 77, 77);
     border-radius: 18px;
+    padding: 10px;
 
 }
 
@@ -70,13 +80,13 @@ button[type=submit] {
     border: solid 2px rgb(77,77,77);
     border-radius: 20px;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 5px 20px;
     padding-top: 7px;
     letter-spacing: 0.75px;
     font-size: clamp(16px, 4vw, 18px);
     font-family: basis33;
     text-transform: uppercase;
-    width: 100px;
+    width: fit-content;
     transition: 0.3s;
 
     &:hover {

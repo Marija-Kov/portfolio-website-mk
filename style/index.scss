@@ -19,7 +19,15 @@ font-family: basis33;
 color: rgb(78, 78, 78);
 }
 
+::-moz-selection {
+ color: rgb(80, 78, 190);
+ background: transparent;
+}
 
+::selection {
+  color: rgb(80, 78, 190);
+  background: transparent;  
+}
 
 body {
     width: 100vw;
