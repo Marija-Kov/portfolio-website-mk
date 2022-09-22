@@ -1,6 +1,6 @@
 import hamMenu from './hamMenu.js';
 import { guidesInit, originsInit, randomGuideAndOriginPos } from './guidesOrigins.js';
-import { bkgChange, wrkParallax, navOnScroll } from './effects.js';
+import { bkgChange, wrkParallax, navOnScroll, sendBtn } from './effects.js';
 
 hamMenu();
 
@@ -15,6 +15,8 @@ originsInit();
 randomGuideAndOriginPos();
 
 wrkParallax();
+
+sendBtn();
 
 
 

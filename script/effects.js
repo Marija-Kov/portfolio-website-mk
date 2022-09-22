@@ -67,3 +67,26 @@ export function wrkParallax() {
   workBase.style.transform = `translate3d(0px, ${rate}px, 0px)`;
  })
 }
+
+export function sendBtn(){
+  let send = document.querySelector('#send');
+  let firstName = document.querySelector('#firstname');
+  let email = document.querySelector('#email');
+  let message = document.querySelector('textarea');
+  send.addEventListener('click', ()=>{
+    if(firstName.value && email.value && message.value){
+      send.innerText="sending..."
+      setTimeout(()=>{
+        send.innerText="Thanks! I will reply to you ASAP."
+      }, 1000);
+      setTimeout(()=>{
+       send.innerText = "Refreshing..."
+      }, 3000)
+    } else {
+      send.innerText = "Please fill out all the fields before hitting send.";
+      setTimeout(()=> {
+        send.innerText = "send"
+      }, 3000)
+    }
+  })
+}
