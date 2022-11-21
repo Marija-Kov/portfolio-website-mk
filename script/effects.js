@@ -1,4 +1,4 @@
-import { red, green, blue, opacity, rojo, verde, azul, opacidad, about, container, sections, navLinks } from './variables.js';
+import { red, green, blue, opacity, rojo, verde, azul, opacidad, about, container, sections, navLinks, send, firstName, email, message } from './variables.js';
 
 export function bkgChange() {
   window.addEventListener('scroll', () => {
@@ -69,16 +69,12 @@ export function wrkParallax() {
 }
 
 export function sendBtn(){
-  let send = document.querySelector('#send');
-  let firstName = document.querySelector('#firstname');
-  let email = document.querySelector('#email');
-  let message = document.querySelector('textarea');
   send.addEventListener('click', ()=>{
     if(firstName.value && email.value && message.value){
       send.innerText="sending..."
       setTimeout(()=>{
         send.innerText="Thanks! I will reply to you ASAP."
-      }, 1000);
+      }, 500);
       setTimeout(()=>{
        send.innerText = "Refreshing..."
       }, 3000)
@@ -89,4 +85,4 @@ export function sendBtn(){
       }, 3000)
     }
   })
-}
+} 

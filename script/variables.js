@@ -15,3 +15,8 @@ export let guideYOrigin = document.querySelector(".guideY-origin");
 export let ham = document.querySelector("#ham");
 export let nav = document.querySelector("nav");
 export let close = document.querySelector("#close");
+
+export let send = document.querySelector('#send');
+export let firstName = document.querySelector('#firstname');
+export let email = document.querySelector('#email');
+export let message = document.querySelector('textarea');
