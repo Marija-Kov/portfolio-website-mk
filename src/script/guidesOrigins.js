@@ -8,7 +8,6 @@ function dragGuideX(e) {
   }else{
    guideX.style.top = `${e.maxH}px`
   }
-  console.log(guideY.offsetHeight)
 }
 
 function dragGuideY(e) {
@@ -19,7 +18,6 @@ function dragGuideY(e) {
   } else {
     guideY.style.left = `${maxW - 1}px`;
   }
-  console.log(maxW);
 }
 
 function moveGuideXOrigin(e) {

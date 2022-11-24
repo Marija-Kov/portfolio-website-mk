@@ -20,3 +20,8 @@ export let send = document.querySelector('#send');
 export let firstName = document.querySelector('#firstname');
 export let email = document.querySelector('#email');
 export let message = document.querySelector('textarea');
+
+export const github = document.querySelector('#github');
+export const twitter = document.querySelector("#twitter");
+export const instagram = document.querySelector("#instagram");
+export const linkedin = document.querySelector("#linkedin");
