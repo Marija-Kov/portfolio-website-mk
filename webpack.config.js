@@ -12,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "[name][contenthash].js",
   },
-  devtool: "source-map",
+  devtool: false,
   devServer: {
     static: {
       directory: path.resolve(__dirname, "dist"),
