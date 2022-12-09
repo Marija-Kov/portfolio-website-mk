@@ -70,19 +70,26 @@ export function wrkParallax() {
 
 export function sendBtn(){
   send.addEventListener('click', ()=>{
-    if(firstName.value && email.value && message.value){
-      send.innerText="sending..."
-      setTimeout(()=>{
-        send.innerText="Thanks! I will reply to you ASAP."
+    if (
+      firstName.value &&
+      email.value &&
+      message.value &&
+      email.value.match(
+        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      )
+    ) {
+      send.innerText = "sending...";
+      setTimeout(() => {
+        send.innerText = "Thanks! I will reply to you ASAP.";
       }, 500);
-      setTimeout(()=>{
-       send.innerText = "Refreshing..."
-      }, 3000)
+      setTimeout(() => {
+        send.innerText = "Refreshing...";
+      }, 3000);
     } else {
       send.innerText = "Please fill out all the fields before hitting send.";
-      setTimeout(()=> {
-        send.innerText = "send"
-      }, 3000)
+      setTimeout(() => {
+        send.innerText = "send";
+      }, 3000);
     }
   })
 } 
