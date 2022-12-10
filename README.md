@@ -1,10 +1,12 @@
-# Web developer/designer portfolio - landing page
+## Web developer/designer website
 
-- Using HTML, CSS/SASS, vanilla JavaScript.
+- Contains a short bio and contact form.
 
-## Design
+- Built using HTML, CSS/SASS, vanilla JavaScript.
 
-- I was going for a technical look with a bit of flash.
+### UI design overview
+
+- Technical with a bit of flash (interactive Inkscape-style guides).
 
 
 
